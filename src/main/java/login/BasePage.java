@@ -181,7 +181,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 
 	 }
 
-	public void initialization(String link,int no,String text) throws InterruptedException, IOException {
+	public void initialization(int no,String text) throws InterruptedException, IOException {
 		try {
 		//loadProperties(no);
 		openBrower(no);
@@ -196,7 +196,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 		read_Login_password(no);
 		
 		
-		LoginMethods.UserLogin(uname,password,link);		//Method of Login class to login user.
+		LoginMethods.UserLogin(uname,password);		//Method of Login class to login user.
 		
 		
 

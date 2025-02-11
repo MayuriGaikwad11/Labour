@@ -71,7 +71,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement Status1( )		//Method for closing Message Popup
 	{
-		user = getDriver().findElement(By.xpath("(//span[contains(text(),'Active')])[1]"));
+		user = getDriver().findElement(By.xpath("(//span[contains(text(),'Active')])"));
 		return user;
 	}
 	
@@ -678,25 +678,526 @@ public class Locators extends BasePage {
 		return user;
 	}
 	
+	public static WebElement  UploadAM ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//button[normalize-space()='Upload'])[2]"));
+		return user;
+	}
+	
+	public static WebElement  Upload1 ( )		
+	{
+		user = getDriver().findElement(By.xpath("//button[@class='figma-btn-blue figma-popup custom-button']"));
+		return user;
+	}
+	
+	public static WebElement  Upload2 ( )		
+	{
+		user = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-paycode-master/div[3]/app-paycode-upload-popup/kendo-dialog/div[2]/div/button"));
+		return user;
+	}
+	
 	public static WebElement  CheckBox ( )		
 	{
-		user = getDriver().findElement(By.xpath("(//input[@class='ng-pristine ng-valid ng-touched'])[1]"));
+		user = getDriver().findElement(By.xpath("(//input[@type='checkbox'])[4]"));
+		return user;
+	}
+	
+	public static WebElement  Reset ( )		
+	{
+		user = getDriver().findElement(By.xpath("//button[normalize-space()='Reset']"));
+		return user;
+	}
+	
+	public static WebElement  CheckBoxAll ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@type='checkbox'])"));
+		return user;
+	}
+	
+	public static WebElement  EntityLocation ( )		
+	{
+		user = getDriver().findElement(By.xpath("//button[normalize-space()='EntityLocation']"));
+		return user;
+	}
+	
+	public static WebElement  EntityExcel ( )		
+	{
+		user = getDriver().findElement(By.xpath("//div[@class='row colpadding0']//button[4]"));
+		return user;
+	}
+	
+	public static WebElement  Searchentities ( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Type to Search']"));
+		return user;
+	}
+	
+	public static WebElement  Dashboard ( )		
+	{
+		user = getDriver().findElement(By.xpath("//img[@title='Dashboard']"));
+		return user;
+	}
+	
+	public static WebElement  OnboardEntity ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Onboard Entity']"));
+		return user;
+	}
+	
+	public static WebElement  Addpremises ( )		
+	{
+		user = getDriver().findElement(By.xpath("//img[@title='Add']"));
+		return user;
+	}
+	
+	public static WebElement  CateringApplicability( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@type='checkbox']"));
+		return user;
+	}
+	
+	public static WebElement  BranchName( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Branch Name']"));
+		return user;
+	}
+	
+	public static WebElement  Maharashtra( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Maharashtra']"));
+		return user;
+	}
+	
+	public static WebElement  BranchAddress( )		
+	{
+		user = getDriver().findElement(By.xpath("//textarea[@placeholder='Branch Address']"));
+		return user;
+	}
+	
+	public static WebElement  Location( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@class='k-input-inner'])[2]"));
 		return user;
 	}
 	
 	
+	public static WebElement  aurangabad( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'Aurangabad')]"));
+		return user;
+	}
+	
+	public static WebElement  EstablishmentTypeb( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Select']"));
+		return user;
+	}
+	
+	public static WebElement  OfficeType( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[normalize-space()='Select'])[2]"));
+		return user;
+	}
+	
+	public static WebElement  OfficeType1( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[contains(text(),'Branch')])[2]"));
+		return user;
+	}
+	
+	public static WebElement  EmployerName( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Employee Name']"));
+		return user;
+	}
+	
+	public static WebElement  EmployerAddress( )		
+	{
+		user = getDriver().findElement(By.xpath("//textarea[@placeholder='Employee Address']"));
+		return user;
+	}
+	
+	public static WebElement  ManagerName( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Manager Name']"));
+		return user;
+	}
+	
+	public static WebElement  ManagerAddress( )		
+	{
+		user = getDriver().findElement(By.xpath("//textarea[@placeholder='Manager Address']"));
+		return user;
+	}
+	
+	public static WebElement  CompanyPhNo( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Mobile No']"));
+		return user;
+	}
+	
+	public static WebElement  HRPhNo( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@placeholder='Mobile No'])[2]"));
+		return user;
+	}
 	
 	
+	public static WebElement  NatureofBusiness( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Nature of Business']"));
+		return user;
+	}
+	
+	public static WebElement  WorkTimings( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[3]"));
+		return user;
+	}
+	
+	public static WebElement  WorkTimings1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'Shift')]"));
+		return user;
+	}
+	
+	public static WebElement  WeekOffDays( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Select']"));
+		return user;
+	}
+	
+	public static WebElement  WeekOffDays1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Monday']"));
+		
+		return user;
+	}
+	
+	public static WebElement  Municipality( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Muncipality']"));
+		return user;
+	}
+	
+	public static WebElement  BusinessType( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[4]"));
+		return user;
+	}
+	
+	public static WebElement  BusinessType1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'IT')]"));
+		return user;
+	}
+	
+	public static WebElement  Powertomposefines( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[5]"));
+		return user;
+	}
+	
+	public static WebElement  Powertomposefines1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'YES')]"));
+		return user;
+	}
+	
+	public static WebElement  MaintainForms( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[6]"));
+		return user;
+	}
+	
+	public static WebElement  MaintainForms1( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[contains(text(),'YES')])[2]"));
+		return user;
+	}
+	
+	public static WebElement  TradeLicence( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[8]"));
+		return user;
+	}
+	
+	public static WebElement  TradeLicence1( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[contains(text(),'YES')])[3]"));
+		return user;
+	}
+	
+	public static WebElement  BranchStartDate( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='k-svg-i-calendar k-button-icon k-svg-icon k-icon ng-star-inserted'])[4]"));
+		return user;
+	}
+	
+	public static WebElement  StatusB( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-value-text'])[9]"));
+		return user;
+	}
+	
+	public static WebElement  LocationAnchor( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@class='k-input-inner'])[11]"));
+		return user;
+	}
+	
+	public static WebElement  LocationAnchor1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Sunil Kumar']"));
+		return user;
+	}
+	
+	public static WebElement  ExportPremises( )		
+	{
+		user = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		return user;
+	}
+	
+	public static WebElement  UpoadBranch( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='figma-btn-blue'])[3]"));
+		return user;
+	}
+	
+	public static WebElement  UpoadBranchSam( )		
+	{
+		user = getDriver().findElement(By.xpath("//img[@title='Bulk Upload']"));
+		return user;
+	}
+	
+	public static WebElement  BranchTriangle( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@viewBox='0 0 512 512'])[9]"));
+		return user;
+	}
+	
+	public static WebElement  BranchTriangle1( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@viewBox='0 0 512 512'])[10]"));
+		return user;
+	}
+	
+	public static WebElement  Deletebranch( )		
+	{
+		user = getDriver().findElement(By.xpath("(//img[@title='Delete'])[1]"));
+		return user;
+	}
+	
+	public static WebElement  Searchbranch( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@placeholder='Type to Search']"));
+		return user;
+	}
+	
+	public static WebElement  PaycodeMapping( )		
+	{
+		user = getDriver().findElement(By.xpath("//a[normalize-space()='Paycode Mapping']"));
+		return user;
+	}
+	
+	public static WebElement  UserBranchMapping( )		
+	{
+		user = getDriver().findElement(By.xpath("//a[normalize-space()='User-Branch Mapping']"));
+		return user;
+	}
+	
+	public static WebElement  PaycodeAdd( )		
+	{
+		user = getDriver().findElement(By.xpath("//button[@title='Add New']"));
+		return user;
+	}
+	
+	public static WebElement  Header( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@name='headerName']"));
+		return user;
+	}
+	
+	public static WebElement  PaycodeType( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Select']"));
+		return user;
+	}
+	
+	public static WebElement  PaycodeType1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'Earning')]"));
+		return user;
+	}
+	
+	public static WebElement  Paycode( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[normalize-space()='Select'])[2]"));
+		return user;
+	}
+	
+	public static WebElement  Paycode1( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Academic Allowance']"));
+		return user;
+	}
+	
+	public static WebElement  SequenceOrder( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@name='sequenceOrder']"));
+		return user;
+	}
+	
+	public static WebElement  EditPaycod( )		
+	{
+		user = getDriver().findElement(By.xpath("(//img[@title='Edit'])[1]"));
+		return user;
+	}
+	
+	public static WebElement  uploadPaycod( )		
+	{
+		user = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/uploadWhite.svg']"));
+		return user;
+	}
+	
+	public static WebElement  SamplePaycod( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@id='btnSampleRLCS'])[2]"));
+		return user;
+	}
+	
+	public static WebElement  serach( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@id='btnSampleRLCS'])[2]"));
+		return user;
+	}
+	
+	public static WebElement  Deletepaycode( )		
+	{
+		user = getDriver().findElement(By.xpath("(//img[@title='Delete'])[1]"));
+		return user;
+	}
+	
+	public static WebElement   MapUser ( )		
+	{
+		user = getDriver().findElement(By.xpath("//button[normalize-space()='Map User']"));
+		return user;
+	}
+	
+	public static WebElement   SearchAct ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@class='k-input-inner'])[2]"));
+		return user;
+	}
 	
 	
+	public static WebElement   Shops ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Shops and Establishment Allied']"));
+		return user;
+	}
+	
+	public static WebElement   Branch ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[normalize-space()='Select Branch'])[1]"));
+		return user;
+	}
+	
+	public static WebElement   Branch1 ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//span[@class='k-input-inner k-readonly'])[2]"));
+		return user;
+	}
+	
+	public static WebElement   Branchtri ( )		
+	{
+		user = getDriver().findElement(By.xpath("//*[@class='k-svg-i-caret-alt-right k-svg-icon k-icon ng-star-inserted']"));
+		return user;
+	}
+	
+	public static WebElement   Branchtri1 ( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@type='checkbox']"));
+		return user;
+	}
+	
+	public static WebElement   Branchtri2 ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@type='checkbox'])[5]"));
+		return user;
+	}
 	
 	
+	public static WebElement   SearchUserm ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@class='k-input-inner'])[3]"));
+		return user;
+	}
 	
+	public static WebElement   SearchUsermA ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Jassimran (jassimran.s@teamlease.com)']"));
+		return user;
+	}
 	
+	public static WebElement   SearchUserm1 ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='sagar (sagaryadav@gmail.com)']"));
+		return user;
+	}
 	
+	public static WebElement   Management ( )		
+	{
+		user = getDriver().findElement(By.xpath("//input[@id='rdIndustry']"));
+		return user;
+	}
 	
+	public static WebElement   SelectAct ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'Select Act')]"));
+		return user;
+	}
 	
+	public static WebElement   SelectBranch ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),' Select Branches ')]"));
+		return user;
+	}
 	
+	public static WebElement   ClearFilter ( )		
+	{
+		user = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ClearFilter.svg']"));
+		return user;
+	}
+	
+	public static WebElement   Grid ( )		
+	{
+		user = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-user-branch-mapping/div[2]/app-grid-action-item/kendo-grid/kendo-pager/kendo-pager-info"));
+		return user;
+	}
+	
+	public static WebElement    UploadAddressMapping  ( )		
+	{
+		user = getDriver().findElement(By.xpath("//button[normalize-space()='Upload Address Mapping']"));
+		return user;
+	}
+	
+	public static WebElement    SampleDoc  ( )		
+	{
+		user = getDriver().findElement(By.xpath("//div[@class='ng-star-inserted']//a[1]"));
+		return user;
+	}
+	
+	public static WebElement    MasterDownload  ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//a[normalize-space()='Master Download'])[1]"));
+		return user;
+	}
+	
+	public static WebElement  AllCheck  ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//input[@type='checkbox'])"));
+		return user;
+	}
 	
 	
 	

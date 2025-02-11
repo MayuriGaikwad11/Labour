@@ -60,7 +60,7 @@ public class LoginMethods extends BasePage {
 	}
 
 	
-	public static void UserLogin(String username, String password, String method) throws InterruptedException
+	public static void UserLogin(String username, String password) throws InterruptedException
 	{		
 		//WebDriverWait wait = new WebDriverWait(getDriver(), 40);
 		WebDriverWait wait1 = new WebDriverWait(getDriver(), 60);
