@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="52" total="53" passed="1" failed="0" skipped="0">
+<testng-results ignored="59" total="60" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-11T10:08:36 IST" name="Default suite" finished-at="2025-02-11T10:10:19 IST" duration-ms="102865">
+  <suite started-at="2025-02-11T16:41:30 IST" name="Default suite" finished-at="2025-02-11T16:43:05 IST" duration-ms="95637">
     <groups>
     </groups>
-    <test started-at="2025-02-11T10:08:36 IST" name="Default test" finished-at="2025-02-11T10:10:19 IST" duration-ms="102865">
+    <test started-at="2025-02-11T16:41:30 IST" name="Default test" finished-at="2025-02-11T16:43:05 IST" duration-ms="95637">
       <class name="testCases.ClientsTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T10:08:36 IST" name="setBrowser" finished-at="2025-02-11T10:08:38 IST" duration-ms="1912" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T16:41:30 IST" name="setBrowser" finished-at="2025-02-11T16:41:32 IST" duration-ms="1791" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T10:08:38 IST" name="Login" finished-at="2025-02-11T10:09:50 IST" duration-ms="71207" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T16:41:32 IST" name="Login" finished-at="2025-02-11T16:42:44 IST" duration-ms="72271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="DailyUpdates()[pri:53, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T10:09:50 IST" name="DailyUpdates" finished-at="2025-02-11T10:10:19 IST" duration-ms="29487" status="PASS">
+        <test-method signature="InputUploadNofile()[pri:60, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T16:42:44 IST" name="InputUploadNofile" finished-at="2025-02-11T16:43:05 IST" duration-ms="21455" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DailyUpdates -->
-        <test-method is-config="true" signature="browserClosing()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T10:10:19 IST" name="browserClosing" finished-at="2025-02-11T10:10:19 IST" duration-ms="2" status="PASS">
+        </test-method> <!-- InputUploadNofile -->
+        <test-method is-config="true" signature="browserClosing()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T16:43:05 IST" name="browserClosing" finished-at="2025-02-11T16:43:05 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClosing -->
-        <test-method is-config="true" signature="Closing()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T10:10:19 IST" name="Closing" finished-at="2025-02-11T10:10:19 IST" duration-ms="4" status="PASS">
+        <test-method is-config="true" signature="Closing()[pri:0, instance:testCases.ClientsTest@5fe94a96]" started-at="2025-02-11T16:43:05 IST" name="Closing" finished-at="2025-02-11T16:43:05 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Closing -->

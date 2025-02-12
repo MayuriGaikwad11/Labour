@@ -653,6 +653,85 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
+	@Test(priority = 54) 
+	void InputUploadTem() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - To check whether sample template get downloaded or not from input web upload tab.");
+		
+		ClientMethods.InputUploadTem(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 55) 
+	void InputUpload() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - Validate  upload with valid details.");
+		
+		ClientMethods.InputUpload(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 56) 
+	void InputUploadInavlid() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - Validate  upload with Invalid details.");
+		
+		ClientMethods.InputUploadInavlid(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 57) 
+	void InputUploadBlank() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - Validate  upload with Balnk sheet .");
+		
+		ClientMethods.InputUploadBlank(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 58) 
+	void InputUploadInvalidformate() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - Validate error message for the invalid formate file upload.");
+		
+		ClientMethods.InputUploadInvalidformate(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 59) 
+	void InputUploadInvalidTemp() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - Validate error message displayed for invalid template file upload.");
+		
+		ClientMethods.InputUploadInvalidTemp(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 60) 
+	void InputUploadNofile() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - Validate validation message for the no choose file clicking on upload");
+		
+		ClientMethods.InputUploadNofile(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+	
 	
 	//issues  
 	//Pending scripts

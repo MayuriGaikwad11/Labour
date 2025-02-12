@@ -6,10 +6,10 @@
       <class name="testCases.ClientsTest">
         <methods>
           <include name="Closing"/>
-          <include name="CalendarExport"/>
+          <include name="InputUpload"/>
           <include name="Login"/>
-          <include name="browserClosing"/>
           <include name="setBrowser"/>
+          <include name="browserClosing"/>
         </methods>
       </class> <!-- testCases.ClientsTest -->
     </classes>

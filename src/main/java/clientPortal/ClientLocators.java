@@ -30,9 +30,21 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement EntityTri1( )		//Method for closing Message Popup
+	{
+		clients = getDriver().findElement(By.xpath("(//*[@class='k-svg-i-caret-alt-right k-svg-icon k-icon ng-star-inserted'])[2]"));
+		return clients;
+	}
+	
 	public static WebElement AVAENTEST( )		//Method for closing Message Popup
 	{
 		clients = getDriver().findElement(By.xpath("//input[@value='AVACORED']"));
+		return clients;
+	}
+	
+	public static WebElement AVAAEntity( )		//Method for closing Message Popup
+	{
+		clients = getDriver().findElement(By.xpath("//input[@value='AVAAEntity']"));
 		return clients;
 	}
 	
@@ -440,8 +452,23 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement InputUpload( )		
+	{
+		clients = getDriver().findElement(By.xpath("//span[normalize-space()='Input Upload']"));
+		return clients;
+	}
 	
+	public static WebElement Template( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='Sample Template'])[1]"));
+		return clients;
+	}
 	
+	public static WebElement BrowseIn( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//button[@class='figma-btn-gray'][normalize-space()='Browse'])[1]"));
+		return clients;
+	}
 	
 	
 	
