@@ -730,6 +730,225 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
+	@Test(priority = 61)  //12/02/2025
+	void IUHistory() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - History button working or not");
+		
+		ClientMethods.IUHistory(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 62)  
+	void IUHistoryD() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Attendance  - History - Input History get downloaded or not");
+		
+		ClientMethods.IUHistoryD(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 63) 
+	void InputUploadTemSa() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary   - To check whether sample template get downloaded or not from input web upload tab.");
+		
+		ClientMethods.InputUploadTemSa(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 64) 
+	void InputUploadSA() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary   - Validate  upload with valid details.");
+		
+		ClientMethods.InputUploadSA(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 65) 
+	void InputUploadInavlidSA() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - Validate upload with Invalid details.");
+		
+		ClientMethods.InputUploadInavlidSA(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 66) //13/02/2025
+	void InputUploadBlankSa() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - Validate  upload with Balnk sheet.");
+		
+		ClientMethods.InputUploadBlankSa(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 67) 
+	void InputUploadInvalidformateSa() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - Validate error message for the invalid formate file upload.");
+		
+		ClientMethods.InputUploadInvalidformateSa(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 68) 
+	void InputUploadInvalidTempSa() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - Validate error message displayed for invalid template file upload.");
+		
+		ClientMethods.InputUploadInvalidTempSa(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 69) 
+	void InputUploadNofileSa() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - Validate validation message for the no choose file clicking on upload");
+		
+		ClientMethods.InputUploadNofileSa(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 70)  
+	void IUHistorySa() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - History button working or not");
+		
+		ClientMethods.IUHistorySa(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 71)  
+	void IUHistoryDSA() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Register - Salary  - History - Input History get downloaded or not");
+		
+		ClientMethods.IUHistoryDSA(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 72) 
+	void InputUploadTemChha() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary   - To check whether sample template get downloaded or not from input web upload tab.");
+		
+		ClientMethods.InputUploadTemChha(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 73) //14/02/2025
+	void InputUploadCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary   - Validate  upload with valid details.");
+		
+		ClientMethods.InputUploadCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 74) 
+	void InputUploadInavlidCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - Validate upload with Invalid details.");
+		
+		ClientMethods.InputUploadInavlidCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 75) 
+	void InputUploadBlankCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - Validate  upload with Balnk sheet.");
+		
+		ClientMethods.InputUploadBlankCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 76) 
+	void InputUploadInvalidformateCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - Validate error message for the invalid formate file upload.");
+		
+		ClientMethods.InputUploadInvalidformateCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 77) 
+	void InputUploadInvalidTempCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - Validate error message displayed for invalid template file upload.");
+		
+		ClientMethods.InputUploadInvalidTempCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 78) 
+	void InputUploadNofileCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - Validate validation message for the no choose file clicking on upload");
+		
+		ClientMethods.InputUploadNofileCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 79)  
+	void IUHistoryCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - History button working or not");
+		
+		ClientMethods.IUHistoryCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 80)  
+	void IUHistoryDCh() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Challan - Salary  - History - Input History get downloaded or not");
+		
+		ClientMethods.IUHistoryDCh(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 	
 	

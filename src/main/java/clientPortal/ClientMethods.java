@@ -2348,14 +2348,1069 @@ else
   		  	
   	}
   	
+    public static void IUHistory(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+    	Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+		
+		 if(ClientLocators.HistoryIU().isEnabled()) {
+			 
+				test.log(LogStatus.PASS,  " History button working successfully."); 
+				ClientLocators.HistoryIU().click();
+		 }
+		 else
+		 {
+		 	test.log(LogStatus.FAIL, "History button does not working properly.");
+		 }
+		  	 Thread.sleep(3000);
+		  
+		
+	}
     
-    
-    
-    
-    
-    
-    
-    
-    
+    public static void IUHistoryD(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+    	Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.HistoryIU1().click();
+  		Thread.sleep(3000);
+  		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
 
+		Thread.sleep(500);
+		ClientLocators.InputHistoryD().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
+		} else {
+			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
+		}
+		 
+		
+	}
+    
+    
+    public static void InputUploadTemSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
+   	{		
+   		Actions action = new Actions(getDriver());
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+   		Thread.sleep(3000);
+   		ClientLocators.SelectEntity().click();
+   		Thread.sleep(2000);
+   	  	ClientLocators.EntityTri1().click();
+   		Thread.sleep(2000);
+   		
+   		ClientLocators.AVAAEntity().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+
+   		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(500);
+		ClientLocators.Template1().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
+		} else {
+			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
+		}
+   		  	
+   	}
+    
+    public static void InputUploadSA ( ExtentTest test) throws InterruptedException, IOException, AWTException
+   	{		
+   		Actions action = new Actions(getDriver());
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+   		Thread.sleep(3000);
+   		ClientLocators.SelectEntity().click();
+   		Thread.sleep(2000);
+   	  	ClientLocators.EntityTri1().click();
+   		Thread.sleep(2000);
+   		
+   		ClientLocators.AVAAEntity().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+
+   		ClientLocators.BrowseIn1().click();
+   		Thread.sleep(3000);
+   		Robot robot=new Robot();
+   		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_Valid Data.xlsx");
+   		 //copy above file to clipboard
+   		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+   		
+   		 //Now press CRTL
+   		
+   		 robot.keyPress(KeyEvent.VK_CONTROL);
+   		 Thread.sleep(1000);
+   		
+   		 //PRESS V
+   		 robot.keyPress(KeyEvent.VK_V);
+   		 Thread.sleep(1000);
+   		
+   		 //Release V
+   		 robot.keyRelease(KeyEvent.VK_V);
+   		
+   		
+   		 //Release CRTL
+   		 robot.keyRelease(KeyEvent.VK_CONTROL);
+   		
+   		 //PRESS Enter
+   		 robot.keyPress(KeyEvent.VK_ENTER);
+   		
+   		 //Release CRTL
+   		 robot.keyRelease(KeyEvent.VK_ENTER);
+   		
+   		 Thread.sleep(1000);
+   				 
+   		 Locators.UploadAM1().click();
+   					
+   					Thread.sleep(3000);
+   				
+   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+   					
+   					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+   				
+   					}else {
+   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+   					}
+   						Locators.ok().click();
+   		  	
+   	}
+   	
+    public static void InputUploadInavlidSA ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+
+  		ClientLocators.BrowseIn1().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_InValid Data.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.UploadAM1().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadBlankSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+
+  		ClientLocators.BrowseIn1().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_Blank.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.UploadAM1().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadInvalidformateSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+
+  		ClientLocators.BrowseIn1().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\ContractsList__MyWorkspace.pdf");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.UploadAM1().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadInvalidTempSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+
+  		ClientLocators.BrowseIn1().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVAREGTR_20250125T052218413Z.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.UploadAM1().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadNofileSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+
+  		 Locators.UploadAM1().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void IUHistorySa(  ExtentTest test) throws InterruptedException, IOException
+ 	{
+ 	
+     	Thread.sleep(3000);
+   		ClientLocators.SelectEntity().click();
+   		Thread.sleep(2000);
+   	  	ClientLocators.EntityTri1().click();
+   		Thread.sleep(2000);
+   		
+   		ClientLocators.AVAAEntity().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+ 		
+ 		 if(ClientLocators.HistoryIU1().isEnabled()) {
+ 			 
+ 				test.log(LogStatus.PASS,  " History button working successfully."); 
+ 				ClientLocators.HistoryIU1().click();
+ 		 }
+ 		 else
+ 		 {
+ 		 	test.log(LogStatus.FAIL, "History button does not working properly.");
+ 		 }
+ 		  	 Thread.sleep(3000);
+ 		  
+ 		
+ 	}
+    
+    public static void IUHistoryDSA(  ExtentTest test) throws InterruptedException, IOException
+  	{
+  	
+      	Thread.sleep(3000);
+    		ClientLocators.SelectEntity().click();
+    		Thread.sleep(2000);
+    	  	ClientLocators.EntityTri1().click();
+    		Thread.sleep(2000);
+    		
+    		ClientLocators.AVAAEntity().click();
+    		Thread.sleep(2000);
+    		ClientLocators.Apply().click();
+    		Thread.sleep(4000);
+    		
+    	 	ClientLocators.InputUpload().click();
+    	 
+    		Thread.sleep(3000);
+    		ClientLocators.HistoryIU1().click();
+    		Thread.sleep(3000);
+    		File dir = new File("C:\\Users\\mayurig\\Downloads");
+  		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+  		Thread.sleep(500);
+  		ClientLocators.InputHistoryD().click();
+
+  		Thread.sleep(8000);
+  		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+  		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+  		Thread.sleep(3000);
+  		if (dirContents.length < allFilesNew.length) {
+  			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
+  		} else {
+  			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
+  		}
+  		 
+  		
+  	}
+  	
+    public static void InputUploadTemChha ( ExtentTest test) throws InterruptedException, IOException, AWTException
+   	{		
+   		Actions action = new Actions(getDriver());
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+   		Thread.sleep(3000);
+   		ClientLocators.SelectEntity().click();
+   		Thread.sleep(2000);
+   	  	ClientLocators.EntityTri1().click();
+   		Thread.sleep(2000);
+   		
+   		ClientLocators.AVAAEntity().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+   		
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+   		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+   		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(500);
+		ClientLocators.Template().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
+		} else {
+			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
+		}
+   		  	
+   	}
+    
+    
+    public static void InputUploadCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
+   	{		
+   		Actions action = new Actions(getDriver());
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+   		Thread.sleep(3000);
+   		ClientLocators.SelectEntity().click();
+   		Thread.sleep(2000);
+   	  	ClientLocators.EntityTri1().click();
+   		Thread.sleep(2000);
+   		
+   		ClientLocators.AVAAEntity().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+   		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+   		ClientLocators.BrowseIn().click();
+   		Thread.sleep(3000);
+   		Robot robot=new Robot();
+   		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_Valid Data.xlsx");
+   		 //copy above file to clipboard
+   		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+   		
+   		 //Now press CRTL
+   		
+   		 robot.keyPress(KeyEvent.VK_CONTROL);
+   		 Thread.sleep(1000);
+   		
+   		 //PRESS V
+   		 robot.keyPress(KeyEvent.VK_V);
+   		 Thread.sleep(1000);
+   		
+   		 //Release V
+   		 robot.keyRelease(KeyEvent.VK_V);
+   		
+   		
+   		 //Release CRTL
+   		 robot.keyRelease(KeyEvent.VK_CONTROL);
+   		
+   		 //PRESS Enter
+   		 robot.keyPress(KeyEvent.VK_ENTER);
+   		
+   		 //Release CRTL
+   		 robot.keyRelease(KeyEvent.VK_ENTER);
+   		
+   		 Thread.sleep(1000);
+   				 
+   		 Locators.Upload().click();
+   					
+   					Thread.sleep(3000);
+   				
+   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+   					
+   					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+   				
+   					}else {
+   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+   					}
+   						Locators.ok().click();
+   	}
+
+    public static void InputUploadInavlidCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_InValid Data.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    
+    public static void InputUploadBlankCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_Blank.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadInvalidformateCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\ContractsList__MyWorkspace.pdf");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadInvalidTempCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVAREGTR_20250125T052218413Z.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    
+    public static void InputUploadNofileCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		ClientLocators.SelectEntity().click();
+  		Thread.sleep(2000);
+  	  	ClientLocators.EntityTri1().click();
+  		Thread.sleep(2000);
+  		
+  		ClientLocators.AVAAEntity().click();
+  		Thread.sleep(2000);
+  		ClientLocators.Apply().click();
+  		Thread.sleep(4000);
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void IUHistoryCh(  ExtentTest test) throws InterruptedException, IOException
+ 	{
+ 	
+     	Thread.sleep(3000);
+   		ClientLocators.SelectEntity().click();
+   		Thread.sleep(2000);
+   	  	ClientLocators.EntityTri1().click();
+   		Thread.sleep(2000);
+   		
+   		ClientLocators.AVAAEntity().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+   		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Challan1().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+ 		
+ 		 if(ClientLocators.HistoryIU().isEnabled()) {
+ 			 
+ 				test.log(LogStatus.PASS,  " History button working successfully."); 
+ 				ClientLocators.HistoryIU().click();
+ 		 }
+ 		 else
+ 		 {
+ 		 	test.log(LogStatus.FAIL, "History button does not working properly.");
+ 		 }
+ 		  	 Thread.sleep(3000);
+ 		  
+ 		
+ 	}
+    
+    public static void IUHistoryDCh(  ExtentTest test) throws InterruptedException, IOException
+  	{
+  	
+      	Thread.sleep(3000);
+    		ClientLocators.SelectEntity().click();
+    		Thread.sleep(2000);
+    	  	ClientLocators.EntityTri1().click();
+    		Thread.sleep(2000);
+    		
+    		ClientLocators.AVAAEntity().click();
+    		Thread.sleep(2000);
+    		ClientLocators.Apply().click();
+    		Thread.sleep(4000);
+    		
+    	 	ClientLocators.InputUpload().click();
+    	 
+    		Thread.sleep(3000);
+    		ClientLocators.Challan().click();
+       		Thread.sleep(2000);
+       		ClientLocators.Challan1().click();
+       		Thread.sleep(4000);
+       		ClientLocators.Apply().click();
+       		Thread.sleep(4000);
+    		ClientLocators.HistoryIU().click();
+    		Thread.sleep(3000);
+    		File dir = new File("C:\\Users\\mayurig\\Downloads");
+  		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+  		Thread.sleep(500);
+  		ClientLocators.InputHistoryD().click();
+
+  		Thread.sleep(8000);
+  		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+  		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+  		Thread.sleep(3000);
+  		if (dirContents.length < allFilesNew.length) {
+  			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
+  		} else {
+  			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
+  		}
+  		 
+  		
+  	}
+    
+    
 }

@@ -464,18 +464,53 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement Template1( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='Sample Template'])[2]"));
+		return clients;
+	}
+	
 	public static WebElement BrowseIn( )		
 	{
 		clients = getDriver().findElement(By.xpath("(//button[@class='figma-btn-gray'][normalize-space()='Browse'])[1]"));
 		return clients;
 	}
 	
+	public static WebElement BrowseIn1( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//button[@class='figma-btn-gray'][normalize-space()='Browse'])[2]"));
+		return clients;
+	}
 	
+	public static WebElement HistoryIU( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='History'])[1]"));
+		return clients;
+	}
 	
+	public static WebElement InputHistoryD( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='Download'])[1]"));
+		return clients;
+	}
 	
+	public static WebElement HistoryIU1( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='History'])[2]"));
+		return clients;
+	}
 	
+	public static WebElement Challan( )		
+	{
+		clients = getDriver().findElement(By.xpath("//*[@class='k-svg-i-caret-alt-down k-button-icon k-svg-icon k-icon ng-star-inserted']"));
+		return clients;
+	}
 	
-	
+	public static WebElement Challan1( )		
+	{
+		clients = getDriver().findElement(By.xpath("//span[contains(text(),'Challan')]"));
+		return clients;
+	}
 	
 	
 	

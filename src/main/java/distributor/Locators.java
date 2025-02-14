@@ -684,6 +684,12 @@ public class Locators extends BasePage {
 		return user;
 	}
 	
+	public static WebElement  UploadAM1 ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//button[normalize-space()='Upload'])[3]"));
+		return user;
+	}
+	
 	public static WebElement  Upload1 ( )		
 	{
 		user = getDriver().findElement(By.xpath("//button[@class='figma-btn-blue figma-popup custom-button']"));
