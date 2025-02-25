@@ -52,7 +52,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 	    protected   String password;
 	    protected String url;
 	    
-	    String filePath ="D:\\eclipse-workspace\\LabourAngularProject\\TestData\\Labour.xlsx";
+	    String filePath ="D:\\LabourAngularProject\\TestData\\Labour.xlsx";
 	    
 		public static WebDriver getDriver() {
 			return driver.get();
@@ -61,7 +61,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 		public static XSSFSheet ReadExcel(int no) throws IOException
 		{
 			//String workingDir = System.getProperty("webdriver.chrome.driver","C:/March2022/PerformerPom/Driver/chromedriver.exe");
-			fis = new FileInputStream("D:\\eclipse-workspace\\LabourAngularProject\\TestData\\Labour.xlsx");
+			fis = new FileInputStream("D:\\LabourAngularProject\\TestData\\Labour.xlsx");
 			workbook = new XSSFWorkbook(fis);
 			sheet = workbook.getSheetAt(no);					//Retrieving third sheet of Workbook
 			return sheet;
@@ -160,7 +160,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 	private void openBrower(int no) throws IOException {
 
 		if (browser.contains("chrome")) {
-					System.setProperty("webdriver.chrome.driver", "D:\\Regtrack\\Regtrack-Project\\Chrome\\chromedriver.exe");
+					System.setProperty("webdriver.chrome.driver", "D:\\LabourAngularProject\\chromedriver.exe");
 					//WebDriverManager.chromedriver().setup();
 					ChromeOptions options = new ChromeOptions();
 					options.addArguments("--remote-allow-origins=*");

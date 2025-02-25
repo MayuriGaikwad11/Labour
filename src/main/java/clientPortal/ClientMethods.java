@@ -10,7 +10,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -18,6 +17,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -111,9 +111,9 @@ public class ClientMethods extends BasePage {
 	ClientLocators.Entities().click();
 		Thread.sleep(5000);
 		try {
-		ClientLocators.Search().sendKeys("AVAENTEST",Keys.ENTER);
+		ClientLocators.Search().sendKeys("AVACORED5",Keys.ENTER);
 		Thread.sleep(4000);
-		String text = getDriver().findElement(By.xpath("//div[@title='AVAENTEST']")).getText();
+		String text = getDriver().findElement(By.xpath("//div[@title='AVACORED5']")).getText();
 		
 			
 		test.log(LogStatus.PASS, "Selected entity name along with their details should get reflected in the grid.");
@@ -166,7 +166,7 @@ public class ClientMethods extends BasePage {
 	ClientLocators.Locations().click();
 		Thread.sleep(5000);
 		try {
-		ClientLocators.Search().sendKeys("Kolhapur",Keys.ENTER);
+		ClientLocators.Search().sendKeys("Kalain",Keys.ENTER);
 		Thread.sleep(4000);
 		String text = getDriver().findElement(By.xpath("//div[@title='Kolhapur']")).getText();
 		
@@ -537,9 +537,9 @@ public class ClientMethods extends BasePage {
 		ClientLocators.View().click();
 		Thread.sleep(5000);
 		try {
-		ClientLocators.Search().sendKeys("NTC1122",Keys.ENTER);
+		ClientLocators.Search().sendKeys("24225",Keys.ENTER);
 		Thread.sleep(4000);
-		String text = getDriver().findElement(By.xpath("//div[@title='NTC1122']")).getText();
+		String text = getDriver().findElement(By.xpath("//div[@title='24225']")).getText();
 		
 			
 		test.log(LogStatus.PASS, "Selected Notice No along with their details should get reflected in the grid.");
@@ -563,7 +563,7 @@ public class ClientMethods extends BasePage {
 		
 		ClientLocators.View().click();
 		Thread.sleep(5000);
-				ClientLocators.Search().sendKeys("NTC1122",Keys.ENTER);
+				ClientLocators.Search().sendKeys("24225",Keys.ENTER);
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -593,7 +593,9 @@ public class ClientMethods extends BasePage {
 		
 		ClientLocators.View().click();
 		Thread.sleep(5000);
-		ClientLocators.Edit().click();
+		ClientLocators.Edit1().click();
+		Thread.sleep(3000);
+		js.executeScript("window.scrollBy(0,1000)");	
 		Thread.sleep(3000);
 		ClientLocators.EditBack().click();
 		Thread.sleep(3000);
@@ -644,7 +646,9 @@ public class ClientMethods extends BasePage {
 		Thread.sleep(5000);
 		
 	
-		ClientLocators.Edit().click();
+		ClientLocators.Edit1().click();
+		Thread.sleep(3000);
+		js.executeScript("window.scrollBy(0,1000)");	
 		Thread.sleep(3000);
 		ClientLocators.EditBack().click();
 		Thread.sleep(3000);
@@ -698,6 +702,45 @@ public class ClientMethods extends BasePage {
 		Thread.sleep(3000);
 		
 	}
+	
+	public static void RegistrationStatusEx( ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		String string_Categories =ClientLocators.Expired().getText();		//Storing old value of Statutory overdue.
+		String[] bits1 = string_Categories.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 1];
+		int CategoriesCountDas = Integer.parseInt(compliancesCount1);
+     	ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		ClientLocators.ExpiredCol().click();
+		Thread.sleep(3000);
+		
+		
+		ClientLocators.readTotalItems().click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = ClientLocators.readTotalItems().getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int CatcountGrid = Integer.parseInt(compliancesCount);
+		
+		if(CategoriesCountDas == CatcountGrid)
+		{
+			
+			test.log(LogStatus.PASS, "No of Expired in the grid = "+CatcountGrid+" | Dashboard Expired  Count = "+CategoriesCountDas);
+		}
+		else
+		{
+		
+			test.log(LogStatus.FAIL, "No of Expired in the grid = "+CatcountGrid+" | Dashboard Expired Count = "+CategoriesCountDas);
+		}
+		Thread.sleep(3000);
+		
+	}
+	
 	
 	public static void RegistrationStatusExport( ExtentTest test) throws InterruptedException, IOException
 	{
@@ -794,6 +837,102 @@ else
 	
 	}
 	
+	public static void RegistrationStatusExportE( ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		String string_Categories =ClientLocators.Expired().getText();		//Storing old value of Statutory overdue.
+		String[] bits1 = string_Categories.split(" ");								//Splitting the String
+		String compliancesCount1 = bits1[bits1.length - 1];
+		int CategoriesCountDas = Integer.parseInt(compliancesCount1);
+     	ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		ClientLocators.ExpiredCol().click();
+		Thread.sleep(3000);
+		
+		
+		
+		ClientLocators.readTotalItems().click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = ClientLocators.readTotalItems().getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		
+		
+File dir = new File("C:\\Users\\mayurig\\Downloads");
+File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+Locators.Export().click();
+
+Thread.sleep(5500);
+File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+if(dirContents.length < allFilesNew.length)
+{
+	
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+    {
+       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+       {
+           lastModifiedFile = allFilesNew[i];
+       }
+    }
+	
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+}
+else
+{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+}
+	
+	}
+
+	
 	public static void RegistrationSView( ExtentTest test) throws InterruptedException, IOException
 	{
 	
@@ -819,6 +958,32 @@ else
 		
 	}
 	
+	public static void RegistrationSViewEx( ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+     	ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		ClientLocators.ExpiredCol().click();
+		Thread.sleep(3000);
+		
+		
+		ClientLocators.OverviewNo().click();
+		Thread.sleep(5000);
+		ClientLocators.OverviewClose().click();
+		
+		Thread.sleep(3000);
+		
+			test.log(LogStatus.PASS,  "view successfully.");
+		
+		
+	}
+	
+	
 	public static void DownloadActive(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
@@ -827,6 +992,35 @@ else
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
 		
 		ClientLocators.ActiveCol().click();
+		Thread.sleep(3000);
+		
+	
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(500);
+		ClientLocators.DownloadBtn().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  " File downloaded successfully.");
+		} else {
+			test.log(LogStatus.FAIL,  " File does not downloaded.");
+		}
+		
+	}
+	
+	public static void DownloadActiveEx(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		ClientLocators.ExpiredCol().click();
 		Thread.sleep(3000);
 		
 	
@@ -875,6 +1069,33 @@ else
 		
 	}
 	
+	public static void RegistrationSHistoryEx( ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+     	ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		ClientLocators.ExpiredCol().click();
+		Thread.sleep(3000);
+		
+		
+		ClientLocators.History().click();
+		Thread.sleep(5000);
+		String item = ClientLocators.RegistrationLicencesHistory().getText();
+		Thread.sleep(4000);
+		if(item.equalsIgnoreCase("Registration & Licences History")) {
+			test.log(LogStatus.PASS,  "Clicking on History button page redirect to the Registration & Licences History page");
+		}else {
+			test.log(LogStatus.FAIL,  " History button not working ");
+
+		}
+		
+	}
+	
 	public static void RegistrationSHistoryExport(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
@@ -883,6 +1104,37 @@ else
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
 		
 		ClientLocators.ActiveCol().click();
+		Thread.sleep(3000);
+		ClientLocators.History().click();
+		Thread.sleep(5000);
+		
+	
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(500);
+		ClientLocators.Export().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  " File downloaded successfully.");
+		} else {
+			test.log(LogStatus.FAIL,  " File does not downloaded.");
+		}
+		
+	}
+	
+	public static void RegistrationSHistoryExportEx(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		
+		ClientLocators.ExpiredCol().click();
 		Thread.sleep(3000);
 		ClientLocators.History().click();
 		Thread.sleep(5000);
@@ -960,6 +1212,33 @@ else
 		
 	}
 	
+	public static void ExpiredSearch(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	
+		ClientLocators.Expired().click();
+		Thread.sleep(5000);
+		ClientLocators.ExpiredCol().click();
+		Thread.sleep(3000);
+		try {
+		ClientLocators.Search().sendKeys("1234",Keys.ENTER);
+		Thread.sleep(4000);
+		String text = getDriver().findElement(By.xpath("//div[@title='1234']")).getText();
+		
+			
+		test.log(LogStatus.PASS, "Selected License No along with their details should get reflected in the grid.");
+		test.log(LogStatus.PASS, "License No selected : "+text);
+		
+		Thread.sleep(3000);
+		}catch(Exception e) {
+			test.log(LogStatus.PASS, "no record available");
+		}
+		
+	}
+	
+	
 	public static void RegistrationSearch(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
@@ -989,6 +1268,16 @@ else
 	{
 	
 		Thread.sleep(2000);
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		String string_Categories =ClientLocators.Overdue().getText();		//Storing old value of Statutory overdue.
 		String[] bits1 = string_Categories.split(" ");								//Splitting the String
@@ -1023,7 +1312,18 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		Thread.sleep(2000);
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1041,12 +1341,56 @@ else
 		
 	}
 	
+	public static void PayrollCompliancesComplie(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		Thread.sleep(2000);
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.PayrollCompliancesComplied().click();
+		Thread.sleep(5000);
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		
+		ClientLocators.OverviewNo().click();
+		Thread.sleep(5000);
+		ClientLocators.OverviewClose().click();
+		
+		Thread.sleep(3000);
+		
+		test.log(LogStatus.PASS,  " Overview successfully.");
+		}else {
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
+		
+		
+		
+	}
+	
 	public static void exportPayrollCompliancesOverdue(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1075,13 +1419,205 @@ else
 		
 	}
 	
+	public static void exportPayrollCompliancesComplied(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.PayrollCompliancesComplied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.readTotalItems().click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = ClientLocators.readTotalItems().getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		
+		
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
+	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+	Locators.Export().click();
+
+	Thread.sleep(5500);
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+	if(dirContents.length < allFilesNew.length)
+	{
+
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	{
+	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	   {
+	       lastModifiedFile = allFilesNew[i];
+	   }
+	}
+
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+
+	if(count1 == actualRow)
+	{
+		
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	}
+	else
+	{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+	}
+		
+	}
+	
+	public static void exportEcComplied(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.ECComplied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.readTotalItems().click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = ClientLocators.readTotalItems().getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		
+		
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
+	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+	Locators.Export().click();
+
+	Thread.sleep(5500);
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+	if(dirContents.length < allFilesNew.length)
+	{
+
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	{
+	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	   {
+	       lastModifiedFile = allFilesNew[i];
+	   }
+	}
+
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+
+	if(count1 == actualRow)
+	{
+		
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	}
+	else
+	{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+	}
+		
+	}
+	
+	
+	
+	
+	
 	
 	public static void ECOverdue(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1099,12 +1635,53 @@ else
 		
 	}
 	
+	public static void ECComplied(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.ECComplied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		
+		ClientLocators.OverviewNo().click();
+		Thread.sleep(5000);
+		ClientLocators.OverviewClose().click();
+		
+		Thread.sleep(3000);
+		
+		test.log(LogStatus.PASS,  " Overview successfully.");
+		}else {
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
+		
+	}
+	
 	public static void exportEC(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1120,7 +1697,8 @@ else
 
 		Thread.sleep(500);
 		Locators.Export().click();
-
+		Thread.sleep(5000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-entity-dashboard-grid/div[3]/kendo-loader/div")));
 		Thread.sleep(8000);
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
@@ -1138,7 +1716,17 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1156,12 +1744,53 @@ else
 		
 	}
 	
+	public static void FCCompioed(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.FCCompied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		
+		ClientLocators.OverviewNo().click();
+		Thread.sleep(5000);
+		ClientLocators.OverviewClose().click();
+		
+		Thread.sleep(3000);
+		
+		test.log(LogStatus.PASS,  " Overview successfully.");
+		}else {
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
+		
+	}
 	public static void exportFC(  ExtentTest test) throws InterruptedException, IOException
 	{
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1187,6 +1816,96 @@ else
 		} else {
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
+		
+	}
+	
+	public static void exportFCComplies(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.FCCompied().click();
+		Thread.sleep(5000);
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		ClientLocators.readTotalItems().click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = ClientLocators.readTotalItems().getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		
+		
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
+	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+	Locators.Export().click();
+
+	Thread.sleep(5500);
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+	if(dirContents.length < allFilesNew.length)
+	{
+
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	{
+	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	   {
+	       lastModifiedFile = allFilesNew[i];
+	   }
+	}
+
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+
+	if(count1 == actualRow)
+	{
+		
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	}
+	else
+	{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+	}
 		
 	}
 	
@@ -1195,7 +1914,17 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1213,12 +1942,56 @@ else
 		
 	}
 	
+	public static void ClraComplied(  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.ClraComplied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		
+		ClientLocators.OverviewNo().click();
+		Thread.sleep(5000);
+		ClientLocators.OverviewClose().click();
+		
+		Thread.sleep(3000);
+		
+		test.log(LogStatus.PASS,  " Overview successfully.");
+		}else {
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
+		
+	}
+	
+	
 	public static void exportClra (  ExtentTest test) throws InterruptedException, IOException
 	{
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1247,12 +2020,111 @@ else
 		
 	}
 	
+	public static void exportClraComplied (  ExtentTest test) throws InterruptedException, IOException
+	{
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+		ClientLocators.Complied().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.ClraComplied().click();
+		Thread.sleep(5000);
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+		ClientLocators.readTotalItems().click();					//Clicking on total items count
+		Thread.sleep(500);
+		String item = ClientLocators.readTotalItems().getText();	//Reading total items String value
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+		
+		
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
+	File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+	Locators.Export().click();
+
+	Thread.sleep(5500);
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+	if(dirContents.length < allFilesNew.length)
+	{
+
+	test.log(LogStatus.PASS, "File downloaded successfully.");
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+	{
+	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+	   {
+	       lastModifiedFile = allFilesNew[i];
+	   }
+	}
+
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-1;
+		}
+		
+	}
+	fis.close();
+
+	if(count1 == actualRow)
+	{
+		
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+	}
+	else
+	{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+	}
+		
+	}
+	
 	public static void exportCP (  ExtentTest test) throws InterruptedException, IOException
 	{
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-	
+		ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Gopi().click();
+		Thread.sleep(4000);
+		ClientLocators.SelectYear().click();
+		Thread.sleep(2000);
+	  	ClientLocators.SelectYear25().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 
@@ -1277,9 +2149,13 @@ else
 	public static void OpenStatus( ExtentTest test) throws InterruptedException, IOException
 	{
 		
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
+		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
+		
 		String string_Categories =ClientLocators.Open().getText();		//Storing old value of Statutory overdue.
 		String[] bits1 = string_Categories.split(" ");								//Splitting the String
 		String compliancesCount1 = bits1[bits1.length - 1];
@@ -1318,8 +2194,9 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(2000);
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		ClientLocators.Open().click();
 		Thread.sleep(5000);
 		
@@ -1342,8 +2219,9 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(2000);
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		ClientLocators.Open().click();
 		Thread.sleep(5000);
 		
@@ -1373,7 +2251,9 @@ else
 		
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		String string_Categories =ClientLocators.Closed().getText();		//Storing old value of Statutory overdue.
 		String[] bits1 = string_Categories.split(" ");								//Splitting the String
 		String compliancesCount1 = bits1[bits1.length - 1];
@@ -1412,8 +2292,9 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(2000);
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		ClientLocators.Closed().click();
 		Thread.sleep(5000);
 		
@@ -1436,8 +2317,9 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(2000);
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		ClientLocators.Closed().click();
 		Thread.sleep(5000);
 		
@@ -1467,8 +2349,9 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(2000);
+		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		ClientLocators.Closed().click();
 		Thread.sleep(5000);
 
@@ -1495,8 +2378,9 @@ else
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(2000);
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
 		
 		String string_Categories =ClientLocators.Registration().getText();		//Storing old value of Statutory overdue.
 		
@@ -1532,7 +2416,8 @@ else
 	{
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
      	ClientLocators.Registration().click();
@@ -1621,7 +2506,8 @@ else
 	{
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
      	ClientLocators.Registration().click();
@@ -1643,7 +2529,8 @@ else
 	{
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
      	ClientLocators.Registration().click();
@@ -1672,7 +2559,8 @@ else
 	{
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
      	ClientLocators.Registration().click();
@@ -1697,7 +2585,8 @@ else
 	{
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1000)");
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
      	ClientLocators.Registration().click();
@@ -1728,7 +2617,8 @@ else
 	{
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1500)");
+		WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
      	ClientLocators.ClickTriangle().click();
@@ -1833,7 +2723,8 @@ else
 	{
 	
     	JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		js.executeScript("window.scrollBy(0,1500)");
+    	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
      	ClientLocators.ClickTriangle().click();
@@ -1879,8 +2770,9 @@ else
   	{
   	
       	JavascriptExecutor js = (JavascriptExecutor) getDriver();
-  		js.executeScript("window.scrollBy(0,1500)");
-  		Thread.sleep(4000);
+      	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
   		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
        	ClientLocators.ClickTriangle().click();
   		Thread.sleep(2000);
@@ -1903,8 +2795,9 @@ else
   	{
   	
       	JavascriptExecutor js = (JavascriptExecutor) getDriver();
-  		js.executeScript("window.scrollBy(0,2000)");
-  		Thread.sleep(4000);
+      	WebElement element = getDriver().findElement(By.xpath("//div[@class='updates']//div[1]//a[1]"));
+		js.executeScript("arguments[0].scrollIntoView(true);", element);
+		Thread.sleep(4000);
   		WebDriverWait wait = new WebDriverWait(getDriver(), (100)) ;
        	ClientLocators.read().click();
   		Thread.sleep(2000);
@@ -1954,16 +2847,16 @@ else
 		Actions action = new Actions(getDriver());
 		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
 		Thread.sleep(3000);
-		ClientLocators.SelectEntity().click();
+	/*	ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
-	  	ClientLocators.EntityTri1().click();
+	//  	ClientLocators.EntityTri1().click();
 		Thread.sleep(2000);
 		
 		ClientLocators.AVAAEntity().click();
 		Thread.sleep(2000);
 		ClientLocators.Apply().click();
 		Thread.sleep(4000);
-		
+		*/
 	 	ClientLocators.InputUpload().click();
 	 
 		Thread.sleep(3000);
@@ -2020,14 +2913,14 @@ else
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
+   		//ClientLocators.SelectEntity().click();
    		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
+   	 // 	ClientLocators.EntityTri1().click();
    		Thread.sleep(2000);
    		
-   		ClientLocators.AVAAEntity().click();
+   	//	ClientLocators.AVAAEntity().click();
    		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
+   //		ClientLocators.Apply().click();
    		Thread.sleep(4000);
    		
    	 	ClientLocators.InputUpload().click();
@@ -2057,15 +2950,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2122,15 +3016,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2187,16 +3082,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
-  		
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   	 	ClientLocators.InputUpload().click();
   	 
   		Thread.sleep(3000);
@@ -2318,15 +3213,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2352,15 +3248,16 @@ else
 	{
 	
     	Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+    	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2384,15 +3281,16 @@ else
 	{
 	
     	Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+    	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2424,15 +3322,16 @@ else
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
-   		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
-   		Thread.sleep(2000);
-   		
-   		ClientLocators.AVAAEntity().click();
-   		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
-   		Thread.sleep(4000);
+   		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
    		
    	 	ClientLocators.InputUpload().click();
    	 
@@ -2461,15 +3360,16 @@ else
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
-   		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
-   		Thread.sleep(2000);
-   		
-   		ClientLocators.AVAAEntity().click();
-   		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
-   		Thread.sleep(4000);
+   		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
    		
    	 	ClientLocators.InputUpload().click();
    	 
@@ -2526,15 +3426,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2591,15 +3492,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2656,15 +3558,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2721,15 +3624,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2786,15 +3690,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -2820,16 +3725,16 @@ else
  	{
  	
      	Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
-   		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
-   		Thread.sleep(2000);
-   		
-   		ClientLocators.AVAAEntity().click();
-   		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
-   		Thread.sleep(4000);
-   		
+     	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
    	 	ClientLocators.InputUpload().click();
    	 
    		Thread.sleep(3000);
@@ -2852,15 +3757,16 @@ else
   	{
   	
       	Thread.sleep(3000);
-    		ClientLocators.SelectEntity().click();
-    		Thread.sleep(2000);
-    	  	ClientLocators.EntityTri1().click();
-    		Thread.sleep(2000);
-    		
-    		ClientLocators.AVAAEntity().click();
-    		Thread.sleep(2000);
-    		ClientLocators.Apply().click();
-    		Thread.sleep(4000);
+      	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
     		
     	 	ClientLocators.InputUpload().click();
     	 
@@ -2891,15 +3797,16 @@ else
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
-   		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
-   		Thread.sleep(2000);
-   		
-   		ClientLocators.AVAAEntity().click();
-   		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
-   		Thread.sleep(4000);
+   		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
    		
    		
    	 	ClientLocators.InputUpload().click();
@@ -2936,15 +3843,16 @@ else
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
-   		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
-   		Thread.sleep(2000);
-   		
-   		ClientLocators.AVAAEntity().click();
-   		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
-   		Thread.sleep(4000);
+   		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
    		
    	 	ClientLocators.InputUpload().click();
    	 
@@ -3006,15 +3914,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -3078,15 +3987,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -3149,15 +4059,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -3221,15 +4132,16 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
-  		Thread.sleep(2000);
-  	  	ClientLocators.EntityTri1().click();
-  		Thread.sleep(2000);
-  		
-  		ClientLocators.AVAAEntity().click();
-  		Thread.sleep(2000);
-  		ClientLocators.Apply().click();
-  		Thread.sleep(4000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
   		
   	 	ClientLocators.InputUpload().click();
   	 
@@ -3294,7 +4206,7 @@ else
   	{		
   		
   		Thread.sleep(3000);
-  		ClientLocators.SelectEntity().click();
+  	/*	ClientLocators.SelectEntity().click();
   		Thread.sleep(2000);
   	  	ClientLocators.EntityTri1().click();
   		Thread.sleep(2000);
@@ -3303,7 +4215,7 @@ else
   		Thread.sleep(2000);
   		ClientLocators.Apply().click();
   		Thread.sleep(4000);
-  		
+  		*/
   	 	ClientLocators.InputUpload().click();
   	 
   		Thread.sleep(3000);
@@ -3334,15 +4246,16 @@ else
  	{
  	
      	Thread.sleep(3000);
-   		ClientLocators.SelectEntity().click();
-   		Thread.sleep(2000);
-   	  	ClientLocators.EntityTri1().click();
-   		Thread.sleep(2000);
-   		
-   		ClientLocators.AVAAEntity().click();
-   		Thread.sleep(2000);
-   		ClientLocators.Apply().click();
-   		Thread.sleep(4000);
+     	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
    		
    	 	ClientLocators.InputUpload().click();
    	 
@@ -3372,15 +4285,16 @@ else
   	{
   	
       	Thread.sleep(3000);
-    		ClientLocators.SelectEntity().click();
-    		Thread.sleep(2000);
-    	  	ClientLocators.EntityTri1().click();
-    		Thread.sleep(2000);
-    		
-    		ClientLocators.AVAAEntity().click();
-    		Thread.sleep(2000);
-    		ClientLocators.Apply().click();
-    		Thread.sleep(4000);
+      	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
     		
     	 	ClientLocators.InputUpload().click();
     	 
@@ -3411,6 +4325,758 @@ else
   		 
   		
   	}
+    
+    public static void InputUploadTemRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
+   	{		
+   		Actions action = new Actions(getDriver());
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+   		Thread.sleep(3000);
+   		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+   		
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+   		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+   		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(500);
+		ClientLocators.Template().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {
+			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
+		} else {
+			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
+		}
+   		  	
+   	}
+    
+    public static void InputUploadRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
+   	{		
+   		Actions action = new Actions(getDriver());
+   		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+   		Thread.sleep(3000);
+   		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+   		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+   		ClientLocators.BrowseIn().click();
+   		Thread.sleep(3000);
+   		Robot robot=new Robot();
+   		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_Valid Data.xlsx");
+   		 //copy above file to clipboard
+   		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+   		
+   		 //Now press CRTL
+   		
+   		 robot.keyPress(KeyEvent.VK_CONTROL);
+   		 Thread.sleep(1000);
+   		
+   		 //PRESS V
+   		 robot.keyPress(KeyEvent.VK_V);
+   		 Thread.sleep(1000);
+   		
+   		 //Release V
+   		 robot.keyRelease(KeyEvent.VK_V);
+   		
+   		
+   		 //Release CRTL
+   		 robot.keyRelease(KeyEvent.VK_CONTROL);
+   		
+   		 //PRESS Enter
+   		 robot.keyPress(KeyEvent.VK_ENTER);
+   		
+   		 //Release CRTL
+   		 robot.keyRelease(KeyEvent.VK_ENTER);
+   		
+   		 Thread.sleep(1000);
+   				 
+   		 Locators.Upload().click();
+   					
+   					Thread.sleep(3000);
+   				
+   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+   					
+   					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+   				
+   					}else {
+   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+   					}
+   						Locators.ok().click();
+   	}
+    
+    public static void InputUploadInavlidRe( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_InValid Data.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadBlankRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\Sample-MonthlySalary_Blank.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadInvalidformateRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\ContractsList__MyWorkspace.pdf");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadInvalidTempRe( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		ClientLocators.BrowseIn().click();
+  		Thread.sleep(3000);
+  		Robot robot=new Robot();
+  		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVAREGTR_20250125T052218413Z.xlsx");
+  		 //copy above file to clipboard
+  		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+  		
+  		 //Now press CRTL
+  		
+  		 robot.keyPress(KeyEvent.VK_CONTROL);
+  		 Thread.sleep(1000);
+  		
+  		 //PRESS V
+  		 robot.keyPress(KeyEvent.VK_V);
+  		 Thread.sleep(1000);
+  		
+  		 //Release V
+  		 robot.keyRelease(KeyEvent.VK_V);
+  		
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_CONTROL);
+  		
+  		 //PRESS Enter
+  		 robot.keyPress(KeyEvent.VK_ENTER);
+  		
+  		 //Release CRTL
+  		 robot.keyRelease(KeyEvent.VK_ENTER);
+  		
+  		 Thread.sleep(1000);
+  				 
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    public static void InputUploadNofilere ( ExtentTest test) throws InterruptedException, IOException, AWTException
+  	{		
+  		
+  		Thread.sleep(3000);
+  		/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+  		
+  	 	ClientLocators.InputUpload().click();
+  	 
+  		Thread.sleep(3000);
+  		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+
+  		 Locators.Upload().click();
+  					
+  					Thread.sleep(3000);
+  				
+  					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+  					
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  						test.log(LogStatus.PASS,"Message Displayed : "+text1);
+  				
+  					}else {
+  						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+  					}
+  						Locators.ok().click();
+  		  	
+  	}
+    
+    
+    public static void IUHistoryRe(  ExtentTest test) throws InterruptedException, IOException
+ 	{
+ 	
+     	Thread.sleep(3000);
+     	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+   		
+   	 	ClientLocators.InputUpload().click();
+   	 
+   		Thread.sleep(3000);
+   		ClientLocators.Challan().click();
+   		Thread.sleep(2000);
+   		ClientLocators.Return().click();
+   		Thread.sleep(4000);
+   		ClientLocators.Apply().click();
+   		Thread.sleep(4000);
+ 		
+ 		 if(ClientLocators.HistoryIU().isEnabled()) {
+ 			 
+ 				test.log(LogStatus.PASS,  " History button working successfully."); 
+ 				ClientLocators.HistoryIU().click();
+ 		 }
+ 		 else
+ 		 {
+ 		 	test.log(LogStatus.FAIL, "History button does not working properly.");
+ 		 }
+ 		  	 Thread.sleep(3000);
+ 		  
+ 		
+ 	}
+    
+    public static void IUHistoryDRe(  ExtentTest test) throws InterruptedException, IOException
+  	{
+  	
+      	Thread.sleep(3000);
+      	/*	ClientLocators.SelectEntity().click();
+		Thread.sleep(2000);
+	//  	ClientLocators.EntityTri1().click();
+		Thread.sleep(2000);
+		
+		ClientLocators.AVAAEntity().click();
+		Thread.sleep(2000);
+		ClientLocators.Apply().click();
+		Thread.sleep(4000);
+		*/
+    		
+    	 	ClientLocators.InputUpload().click();
+    	 
+    		Thread.sleep(3000);
+    		ClientLocators.Challan().click();
+       		Thread.sleep(2000);
+       		ClientLocators.Return().click();
+       		Thread.sleep(4000);
+       		ClientLocators.Apply().click();
+       		Thread.sleep(4000);
+    		ClientLocators.HistoryIU().click();
+    		Thread.sleep(3000);
+    		File dir = new File("C:\\Users\\mayurig\\Downloads");
+  		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+  		Thread.sleep(500);
+  		ClientLocators.InputHistoryD().click();
+
+  		Thread.sleep(8000);
+  		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+  		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+  		Thread.sleep(3000);
+  		if (dirContents.length < allFilesNew.length) {
+  			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
+  		} else {
+  			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
+  		}
+  		 
+  		
+  	}
+    
+    /*
+    public static void CriticalDocuments(  ExtentTest test) throws InterruptedException
+	{
+		Thread.sleep(1000);
+		ClientLocators.clickMyDocuments().click();					//Clicking on 'My Documents'
+		
+		Thread.sleep(1000);
+		ClientLocators.clickCriticalDocuments().click();				//Clicking on 'Critical Documents'
+		
+		WebDriverWait wait = new WebDriverWait(getDriver(), (20));
+	
+		Thread.sleep(500);
+		String name = ClientLocators.readFolderName().getText();		//Reading the folder name to create new folder.
+		
+		String folder = name+"A"; 
+		
+		ClientLocators.clickNewFolder().click();							//Clicking on '+New' button.
+	
+		Thread.sleep(2000);
+	
+		Thread.sleep(300);
+	//	clickIsUniversal().click();
+		
+		Thread.sleep(1000);
+		ClientLocators.writeFolderName().sendKeys(folder);			//Writing Folder name.
+		
+		Thread.sleep(1000);
+		ClientLocators.clickCreate().click();						//Clicking on create button.
+		
+		Thread.sleep(500);
+	//	litigationPerformer.MethodsPOM.progress();
+		
+		Thread.sleep(500);
+	//	String msg = driver.switchTo().alert().getText();
+		//test.log(LogStatus.INFO, msg);
+		Thread.sleep(500);
+		try {
+			String t = OverduePOM.readFolderMsg().getText();
+			test.log(LogStatus.PASS, t);
+			//getDriver().switchTo().alert().accept();
+		}catch(Exception e) {
+			
+		}
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@align='left'])[1]")));
+		name = readFolderName().getText();				//Reading the folder name we had created
+		
+		if(folder.equalsIgnoreCase(name))
+		{
+			test.log(LogStatus.PASS, "Created folder '"+folder+"' displayed in the records.");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Created folder '"+folder+"' doesn't displayed in the records.");
+		}
+		
+		Thread.sleep(4000);
+		readFolderName().click();						//Clicking on folder name we had created.
+		Thread.sleep(1000);
+		readFolderName().click();						//Clicking on folder name we had created.
+		
+		Thread.sleep(1000);
+	//	litigationPerformer.MethodsPOM.progress();
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(clickNew()));
+		clickNew().click();							//Clicking on 'New'
+		
+		Thread.sleep(500);
+	//	litigationPerformer.MethodsPOM.progress();
+		
+		//Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(clickNewFile()));
+		clickNewFile().click();						//CLicking on 'New File'
+		
+		Thread.sleep(1000);
+	//	litigationPerformer.MethodsPOM.progress();
+		
+		Thread.sleep(500);
+		String workingDir = System.getProperty("user.dir");
+		uploadNewFile().sendKeys("E:\\Ethics Committee Details.xlsx");	//uploading new file		
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(clickUploadDocument()));
+		
+		Thread.sleep(5000);
+		clickUploadDocument().click();				//Clicking on 'Upload Document'
+		
+		Thread.sleep(5000);
+	    // Switching to Alert        
+        Alert alert = getDriver().switchTo().alert();		
+        		
+        // Capturing alert message.    
+        String alertMessage= getDriver().switchTo().alert().getText();	
+        
+        Thread.sleep(3000);
+        test.log(LogStatus.PASS, alertMessage);
+        		
+        // Displaying alert message		
+        System.out.println(alertMessage);	
+        
+        		
+        // Accepting alert		
+        alert.accept();		
+		
+		
+		
+		Thread.sleep(100);
+	//	litigationPerformer.MethodsPOM.progress();
+		
+		Thread.sleep(4000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@align='left'])[1]")));
+		readFolderName().click();						//Clicking on file we had uploaded.
+		
+		
+		
+		
+		
+//		if(readFolderName().isDisplayed())			//Checking if file got created or not.
+//			test.log(LogStatus.PASS, "Uploaded file displayed.");
+//		else
+//			test.log(LogStatus.PASS, "Uploaded file does not displayed.");
+//		
+		//readFolderName().click();						//Clicking on file we had uploaded.
+				
+		Thread.sleep(500);
+		clickShareFolder().click();					//Clicking on Share Folder image.
+		
+		Thread.sleep(1000);
+	//	litigationPerformer.MethodsPOM.progress();
+		
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.elementToBeClickable(clickPeople()));
+		clickPeople().click();						//Clicking on People drop down 
+		clickSearchPeople().click();					//Clicking on Search People drop down.
+		
+		Thread.sleep(500);
+	//	clickSearchPeople(driver).sendKeys("aayush tripathi");			//Writing user name to search for  CFO
+	//	clickSearchPeople().sendKeys("Company");	        // Auditor
+	//	clickSearchPeople().sendKeys("Amit shaha");	//Approver
+		//Thread.sleep(4000);
+		
+		clickSearchPeople().sendKeys("Approver User");	//Department
+		Thread.sleep(3000);
+		
+		clickPeopleCheckBox1().click();	
+		Thread.sleep(3000);//Clicking on label to get out from people search box
+		getDriver().findElement(By.xpath("//*[@id='divOpenPermissionPopup']/div/div/div[2]")).click();
+		
+		Thread.sleep(1000);
+		clickDone().click();	//Clicking on 'Done' to share folder.
+		Thread.sleep(1000);
+		getDriver().switchTo().alert().accept();
+		
+		Thread.sleep(1000);
+		readFolderName().click();						//Clicking on file name we had uploaded.
+		
+		Thread.sleep(500);
+		clickShareFolder().click();					//Clicking on Share File image.
+		Thread.sleep(500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='ContentPlaceHolder1_myRepeater_LnkDeletShare_0']")));	//Waiting till the share element gets visible
+		
+		//Thread.sleep(1000);
+		if(checkShared().isDisplayed())				//Checking if folder gor shared or not.
+			test.log(LogStatus.PASS, "Uploaded file shared.");
+		else
+			test.log(LogStatus.PASS, "Uploaded file does not shared.");
+		
+		Thread.sleep(500);
+		closeSharePoppup().click();
+		Thread.sleep(500);
+		Thread.sleep(1000);
+		readFolderName().click();	
+		getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_upPromotorList']/div/div/section/div[3]/div/div[2]/img[5]")).click();
+		Thread.sleep(3000);
+	String Msg=	getDriver().switchTo().alert().getText();
+	test.log(LogStatus.PASS, Msg);
+	getDriver().switchTo().alert().accept();
+		Thread.sleep(3000);
+		
+		getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_lnkMyDrive']")).click();
+		Thread.sleep(3000);
+		//.findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);   //search folder
+	/*
+		.findElement(By.xpath("//*[@id='ContentPlaceHolder1_grdFolderDetail_lnkEditFolder_0']")).click();
+		Thread.sleep(1000);
+	
+		.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).clear();
+		Thread.sleep(3000);
+		.findElement(By.xpath("//*[@id='ContentPlaceHolder1_txtFolderName']")).sendKeys("Automated");
+		Thread.sleep(1000);
+		
+		.findElement(By.xpath("//*[@id='ContentPlaceHolder1_btnCreateFolder1']")).click();
+		Thread.sleep(3000);
+	test.log(LogStatus.PASS, "Rename Successfully");
+	getDriver().findElement(By.xpath("//*[@id='ContentPlaceHolder1_tbxFilter']")).sendKeys(folder,Keys.ENTER);   //search folder
+		test.log(LogStatus.PASS, "Filter Working Successfully");
+		Thread.sleep(1000);
+		wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.clickDashboard()));
+		OverduePOM.clickDashboard().click();			//Clicking on Dashboard
+	}
+
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 }

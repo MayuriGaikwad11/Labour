@@ -48,7 +48,7 @@ public class ClientsTest extends BasePage {
 	void setBrowser() throws InterruptedException, IOException
 	{
 		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\eclipse-workspace\\LabourAngularProject\\Report\\Labour.html",true);
-		test = extent.startTest("Loging In - Distributor admin");
+		test = extent.startTest("Loging In -Client Portal");
 		test.log(LogStatus.PASS, "Logging into system");
 
 		extent.endTest(test);
@@ -175,10 +175,10 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 11)//05/02/2025
+//	@Test(priority = 11)//05/02/2025
 	void ViewAddNew() throws InterruptedException, IOException, AWTException
 	{
-		test = extent.startTest("'Open Notices' - view button working or not ");
+		test = extent.startTest("'Open Notices' - view - add new button working or not ");
 		
 		ClientMethods.ViewAddNew(test);
 		
@@ -255,7 +255,7 @@ public class ClientsTest extends BasePage {
 	@Test(priority = 18)
 	void RegistrationSExport() throws InterruptedException, IOException
 	{
-		test = extent.startTest("''Registration Status' - Export button working or not");
+		test = extent.startTest("''Registration Status'  - Export button working or not");
 		
 		ClientMethods.RegistrationSExport(test);
 		
@@ -263,11 +263,10 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	
 	@Test(priority = 19) 
 	void RegistrationSearch() throws InterruptedException, IOException
 	{
-		test = extent.startTest("'Registration Status' - Validate search filter working or not");
+		test = extent.startTest("'Registration Status' - Active Validate search filter working or not");
 		
 		ClientMethods.RegistrationSearch(test);
 		
@@ -354,7 +353,85 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 27) //pending
+	@Test(priority = 20) //24/02/2024
+	void RegistrationStatusEx() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Registration Status' - Expired  Count Verification");
+		
+		ClientMethods.RegistrationStatusEx(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 21) //2 test case //24/02/2025
+	void RegistrationStatusExportE() throws InterruptedException, IOException
+	{
+		test = extent.startTest("''Registration Status' - Expired - Export button working or not");
+		
+		ClientMethods.RegistrationStatusExportE(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 22) //25/02/2025
+	void RegistrationSViewEx() throws InterruptedException, IOException
+	{
+		test = extent.startTest("''Registration Status' - Expired - view button working or not");
+		
+		ClientMethods.RegistrationSViewEx(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 23) //25/02/2025
+	void DownloadActiveEx() throws InterruptedException, IOException
+	{
+		test = extent.startTest("''Registration Status' - Expired - Download button working or not");
+		
+		ClientMethods.DownloadActiveEx(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 24) //25/02/2025
+	void RegistrationSHistoryEx() throws InterruptedException, IOException
+	{
+		test = extent.startTest("''Registration Status' - Expired - History button working or not");
+		
+		ClientMethods.RegistrationSHistoryEx(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 25) //25/02/2025
+	void RegistrationSHistoryExportEx() throws InterruptedException, IOException
+	{
+		test = extent.startTest("''Registration Status' - Expired - History - Export button working or not");
+		
+		ClientMethods.RegistrationSHistoryExportEx(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 26) //25/02/2025
+	void ExpiredSearch() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Registration Status' - Expired - Validate search filter working or not");
+		
+		ClientMethods.ExpiredSearch(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
+//	@Test(priority = 27) //pending //06/02/2025
 	void CompliancePerformance() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Compliance Performance' - Overdue  Count Verification");
@@ -464,7 +541,95 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 37) 
+	@Test(priority = 28) //24/02/2025
+	void PayrollCompliancesComplie() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Payroll Compliances - Complied - Overview button working or not");
+		
+		ClientMethods.PayrollCompliancesComplie(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 29) 
+	void exportPayrollCompliancesComplied() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Payroll Compliances - Complied - Export button working or not");
+		
+		ClientMethods.exportPayrollCompliancesComplied(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 30) 
+	void ECComplied() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Establishment Compliances - Complied - Overview button working or not");
+		
+		ClientMethods.ECComplied(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 31) 
+	void exportEcComplied() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Establishment Compliances - Complied - Export button working or not");
+		
+		ClientMethods.exportEcComplied(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 32) 
+	void FCCompioed() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Factory  Compliances - Complied - Overview button working or not");
+		
+		ClientMethods.FCCompioed(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 33) 
+	void exportFCComplies() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Factory  Compliances - Complied - Export button working or not");
+		
+		ClientMethods.exportFCComplies(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 34) 
+	void ClraComplied() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Clra Compliances - Complied - Overview button working or not");
+		
+		ClientMethods.ClraComplied(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 35) 
+	void exportClraComplied() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Compliance Performance' - Clra Compliances - Complied - Export button working or not");
+		
+		ClientMethods.exportClraComplied(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 37) //07/02/2025
 	void OpenStatus() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Notice Status' - Open  Count Verification");
@@ -475,7 +640,7 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 38) //07/02/2025
+	@Test(priority = 38) 
 	void OpenView() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'Notice Status' - Open -  Overview button working or not");
@@ -862,7 +1027,7 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 73) //14/02/2025
+	@Test(priority = 73) 
 	void InputUploadCh() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("'Input Upload  - Challan - Salary   - Validate  upload with valid details.");
@@ -895,7 +1060,7 @@ public class ClientsTest extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 76) 
+	@Test(priority = 76) //14/02/2025
 	void InputUploadInvalidformateCh() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("'Input Upload  - Challan - Salary  - Validate error message for the invalid formate file upload.");
@@ -949,8 +1114,110 @@ public class ClientsTest extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
+	/*
+	@Test(priority = 81) 
+	void InputUploadTemRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary   - To check whether sample template get downloaded or not from input web upload tab.");
+		
+		ClientMethods.InputUploadTemRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 82) 
+	void InputUploadRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary   - Validate  upload with valid details.");
+		
+		ClientMethods.InputUploadRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 83) 
+	void InputUploadInavlidRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - Validate upload with Invalid details.");
+		
+		ClientMethods.InputUploadInavlidRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 84) 
+	void InputUploadBlankRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - Validate  upload with Balnk sheet.");
+		
+		ClientMethods.InputUploadBlankRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 85) 
+	void InputUploadInvalidformateRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - Validate error message for the invalid formate file upload.");
+		
+		ClientMethods.InputUploadInvalidformateRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 86) 
+	void InputUploadInvalidTempRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - Validate error message displayed for invalid template file upload.");
+		
+		ClientMethods.InputUploadInvalidTempRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 87) 
+	void InputUploadNofilere() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - Validate validation message for the no choose file clicking on upload");
+		
+		ClientMethods.InputUploadNofilere(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 88)  
+	void IUHistoryRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - History button working or not");
+		
+		ClientMethods.IUHistoryRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 89)  
+	void IUHistoryDRe() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("'Input Upload  - Return - Salary  - History - Input History get downloaded or not");
+		
+		ClientMethods.IUHistoryDRe(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	*/
 	
 	
+	
+	//setTimeout(()=>{debugger},3000)
 	
 	//issues  
 	//Pending scripts
@@ -959,11 +1226,11 @@ public class ClientsTest extends BasePage {
 	@AfterMethod
   	void browserClosing() throws InterruptedException
   	{
-		//closeBrowser();
+		closeBrowser();
   		//Thread.sleep(1000);
   		//getDriver().close();
   	}	       
-  		       		
+			
   	@AfterTest
   	void Closing() throws InterruptedException
   	{

@@ -38,7 +38,13 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement AVAENTEST( )		//Method for closing Message Popup
 	{
-		clients = getDriver().findElement(By.xpath("//input[@value='AVACORED']"));
+		clients = getDriver().findElement(By.xpath("//input[@value='AVACORED5']"));
+		return clients;
+	}
+	
+	public static WebElement Gopi( )		//Method for closing Message Popup
+	{
+		clients = getDriver().findElement(By.xpath("//*[@id='0']/span/div/input"));
 		return clients;
 	}
 	
@@ -57,6 +63,12 @@ public class ClientLocators extends BasePage{
 	public static WebElement SelectYear22( )		//Method for closing Message Popup
 	{
 		clients = getDriver().findElement(By.xpath("//span[normalize-space()='2024']"));
+		return clients;
+	}
+	
+	public static WebElement SelectYear25( )		//Method for closing Message Popup
+	{
+		clients = getDriver().findElement(By.xpath("//span[normalize-space()='2025']"));
 		return clients;
 	}
 	
@@ -170,7 +182,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Location1( )		//Method for closing Message Popup
 	{
-		clients = getDriver().findElement(By.xpath("//span[normalize-space()='Kolhapur [416001]']"));
+		clients = getDriver().findElement(By.xpath("//span[normalize-space()='AHMEDNAGAR [414001]']"));
 		return clients;
 	}
 	
@@ -182,7 +194,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Branch1( )		//Method for closing Message Popup
 	{
-		clients = getDriver().findElement(By.xpath("//span[normalize-space()='Branch Kolhapur']"));
+		clients = getDriver().findElement(By.xpath("//span[normalize-space()='Belgaon']"));
 		return clients;
 	}
 	
@@ -293,6 +305,13 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement Edit1( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[contains(@title,'Edit')])[1]"));
+		return clients;
+	}
+	
+	
 	public static WebElement EditBack( )		
 	{
 		clients = getDriver().findElement(By.xpath("//button[@class='figma-btn-blue']"));
@@ -301,7 +320,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement OverviewNo( )		
 	{
-		clients = getDriver().findElement(By.xpath("(//img[@title='Overview'])[1]"));
+		clients = getDriver().findElement(By.xpath("//img[@title='View']"));
 		return clients;
 	}
 	
@@ -313,19 +332,37 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Active( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'262.853829')]"));
+		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'57.9590036')]"));
+		return clients;
+	}
+	
+	public static WebElement Expired( )		
+	{
+		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'254.942630')]"));
 		return clients;
 	}
 	
 	public static WebElement ActiveCol( )		
 	{
-		clients = getDriver().findElement(By.xpath("(//div[@class='cell-content total-click ng-star-inserted'][normalize-space()='0'])[1]"));
+		clients = getDriver().findElement(By.xpath("(//div[@class='cell-content total-click ng-star-inserted'])"));
+		return clients;
+	}
+	
+	public static WebElement ExpiredCol( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//div[@class='cell-content total-click ng-star-inserted'])[2]"));
 		return clients;
 	}
 	
 	public static WebElement Overdue( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'330.984847')]"));
+		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'80.0603627')]"));
+		return clients;
+	}
+	
+	public static WebElement Complied( )		
+	{
+		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'357.484847')]"));
 		return clients;
 	}
 	
@@ -342,9 +379,33 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement PayrollCompliancesComplied( )		
+	{
+		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(6) td:nth-child(2) div:nth-child(1)"));
+		return clients;
+	}
+	
+	public static WebElement readTotalItemsD( )		
+	{
+		clients = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-entity-dashboard-grid/div[2]/app-grid-action-item/kendo-grid/kendo-pager/kendo-pager-info"));
+		return clients;
+	}
+	
 	public static WebElement ECOverdue( )		
 	{
 		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(10) td:nth-child(3) div:nth-child(1)"));
+		return clients;
+	}
+	
+	public static WebElement ECComplied( )		
+	{
+		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(10) td:nth-child(2) div:nth-child(1)"));
+		return clients;
+	}
+	
+	public static WebElement Loader( )		
+	{
+		clients = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-entity-dashboard-grid/div[3]/kendo-loader/div"));
 		return clients;
 	}
 	
@@ -354,15 +415,27 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement FCCompied( )		
+	{
+		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(14) td:nth-child(2) div:nth-child(1)"));
+		return clients;
+	}
+	
 	public static WebElement ClraOverdue( )		
 	{
 		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(18) td:nth-child(3) div:nth-child(1)"));
 		return clients;
 	}
 	
+	public static WebElement ClraComplied( )		
+	{
+		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(18) td:nth-child(2) div:nth-child(1)"));
+		return clients;
+	}
+	
 	public static WebElement Open( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'313.919575')]"));
+		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
 		return clients;
 	}
 	
@@ -374,7 +447,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Closed( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'32.4782629')]"));
+		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
 		return clients;
 	}
 	
@@ -430,7 +503,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement number( )		
 	{
-		clients = getDriver().findElement(By.xpath("(//div[contains(@class,'month-number number-upcoming')][normalize-space()='2'])[1]"));
+		clients = getDriver().findElement(By.xpath("//*[@class='month-number number-complete']"));
 		return clients;
 	}
 	
@@ -511,6 +584,78 @@ public class ClientLocators extends BasePage{
 		clients = getDriver().findElement(By.xpath("//span[contains(text(),'Challan')]"));
 		return clients;
 	}
+	
+	public static WebElement Return( )		
+	{
+		clients = getDriver().findElement(By.xpath("//span[contains(text(),'Return')]"));
+		return clients;
+	}
+	
+	public static WebElement clickMyDocuments( )		
+	{
+		clients = getDriver().findElement(By.xpath("//span[normalize-space()='My Documents']"));
+		return clients;
+	}
+	
+	public static WebElement clickCriticalDocuments( )		
+	{
+		clients = getDriver().findElement(By.xpath("//span[normalize-space()='Critical Documents']"));
+		return clients;
+	}
+	
+	public static WebElement readFolderName( )		
+	{
+		clients = getDriver().findElement(By.xpath("//*[@class='cell-content ng-star-inserted']"));
+		return clients;
+	}
+	
+	public static WebElement clickNewFolder( )		
+	{
+		clients = getDriver().findElement(By.xpath("//button[@id='menu1']"));
+		return clients;
+	}
+	
+	public static WebElement writeFolderName( )		
+	{
+		clients = getDriver().findElement(By.xpath("//input[@placeholder='Enter Folder Name']"));
+		return clients;
+	}
+	
+	public static WebElement clickCreate( )		
+	{
+		clients = getDriver().findElement(By.xpath("//button[normalize-space()='Create']"));
+		return clients;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

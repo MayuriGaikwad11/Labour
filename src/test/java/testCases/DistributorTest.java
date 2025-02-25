@@ -49,7 +49,7 @@ public class DistributorTest  extends BasePage {
 	@BeforeTest
 	void setBrowser() throws InterruptedException, IOException
 	{
-		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\eclipse-workspace\\LabourAngularProject\\Report\\Labour.html",true);
+		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\LabourAngularProject\\Report\\Labour.html",true);
 		test = extent.startTest("Loging In - Distributor admin");
 		test.log(LogStatus.PASS, "Logging into system");
 
@@ -358,7 +358,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 27) 
+	//@Test(priority = 27) 
 	void SearchEntity() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether entity drop down is working or not");
@@ -369,7 +369,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 28) 
+//	@Test(priority = 28) 
 	void SearchEntityClear() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Validate entity Page Clear button.");
@@ -381,22 +381,22 @@ public class DistributorTest  extends BasePage {
 	}
 	
 	@Test(priority = 29)
-	void EntityDelete() throws InterruptedException, IOException
+	void EntityDeleteCancel() throws InterruptedException, IOException
 	{
-		test = extent.startTest("To check whether entity is getting deleted or not");
+		test = extent.startTest("Validate entity Page Delete customer 'Cancel' button.");
 		
-		Methods.EntityDelete(test);
+		Methods.EntityDeleteCancel(test);
 		
 		extent.endTest(test);
 		extent.flush();
 	}
 	
 	@Test(priority = 30)
-	void EntityDeleteCancel() throws InterruptedException, IOException
+	void EntityDelete() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Validate entity Page Delete customer 'Cancel' button.");
+		test = extent.startTest("To check whether entity is getting deleted or not");
 		
-		Methods.EntityDeleteCancel(test);
+		Methods.EntityDelete(test);
 		
 		extent.endTest(test);
 		extent.flush();
@@ -524,7 +524,7 @@ public class DistributorTest  extends BasePage {
 	@Test(priority = 41) 
 	void Searchentities() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Validate Corporate Page Customer search dropdown");
+		test = extent.startTest("Validate Entities search dropdown");
 		
 		Methods.Searchentities(test);
 		
@@ -587,7 +587,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 44) 
+	@Test(priority = 46) 
 	void UploadBranchEmpty() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether error message display or not for empty file upload from premise master..");
@@ -631,7 +631,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48) 
+	@Test(priority = 49) 
 	void UploadBranchInvalidTemp() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether error message display or not for invalid template file upload from premise upload.");
@@ -643,7 +643,7 @@ public class DistributorTest  extends BasePage {
 	}
 	
 	
-	@Test(priority = 48)
+	@Test(priority = 50)
 	void UploadBranchInvalidFormate() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error message for the invalid formate file upload in bulk upload from premise master.");
@@ -654,7 +654,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 51)
 	void Upload() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate validation message for the no choose file button from bulk upload of premise master.");
@@ -665,7 +665,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48) 
+	@Test(priority = 52) 
 	void UploadBranchCheckInvalidTemp() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error message displayed for invalid template file upload in selected(CheckBox) location from premise master.");
@@ -676,7 +676,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 53)
 	void UploadBranchCheckInvalidFormate() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("validate error message displayed for invalid formate file upload in selected(Check box) location from premise master.");
@@ -687,7 +687,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 54)
 	void UploadCheck() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate validation message displayed for choose file button in selected(CheckBox) location from premise master.");
@@ -699,7 +699,7 @@ public class DistributorTest  extends BasePage {
 	}
 	
 	
-	@Test(priority = 48)
+	@Test(priority = 55)
 	void UploadAddMapping() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate  Sample Document  download of address mapping upload from premise master.");
@@ -710,7 +710,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 56)
 	void MUploadAddMapping() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate master document file download of address mapping upload from premise master.");
@@ -721,7 +721,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 57)
 	void UploadAddressMap() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether valid address mapping file upload or not from premise master.");
@@ -732,7 +732,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 58)
 	void UploadAddressMapEmpty() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error message for empty file upload in address mapping upload from premise master.");
@@ -742,8 +742,8 @@ public class DistributorTest  extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	
-	@Test(priority = 48)
+	//check
+	@Test(priority = 59)
 	void UploadAddInvalid() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error message and error file download for address mapping upload from premise master with invalid data file.");
@@ -763,7 +763,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48) 
+	@Test(priority = 60) 
 	void UploadAddInvalidTemp() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error message for the invalid template file upload in address mapping upload from premise master.");
@@ -774,7 +774,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 61)
 	void UploadAddInvalidFormate() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether error message display or not for invalid file formate upload from authority address mapping upload of premise master.");
@@ -785,7 +785,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 48)
+	@Test(priority = 62)
 	void UploadADD() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate validation message for the no choose file button from bulk upload of premise master.");
@@ -796,7 +796,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 49)
+	@Test(priority = 63)
 	void SearchBranch() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether search field (branch) is working or not");
@@ -807,7 +807,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 50)
+	@Test(priority = 64)
 	void BDeleteCancel() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Delete Branch 'Cancel' Button");
@@ -818,7 +818,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 51)
+	@Test(priority = 65)
 	void branchDelete() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether branch is getting deleted or not");
@@ -831,7 +831,7 @@ public class DistributorTest  extends BasePage {
 	
 ///////--------------------------Onboard Entity - Paycode Mapping -------------------------------------------///////////////////////
 	
-	@Test(priority = 52) //28/01/2025
+	@Test(priority = 66) //28/01/2025
 	void PayCodeAddNew() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity Add New Paycode With Valid Data");
@@ -842,7 +842,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	  
-	@Test(priority = 53) 
+	@Test(priority = 67) 
 	void PayCodeAddNewInvalid() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity Add new Paycode With Invalid Data");
@@ -853,7 +853,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 54) 
+	@Test(priority = 68) 
 	void PayCodeEdit() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity Paycode 'Edit' Button.");
@@ -864,7 +864,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 55) 
+	@Test(priority = 69) 
 	void UploadPaycode() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity Paycode Upload with Valid Data.");
@@ -875,7 +875,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 56)
+	@Test(priority = 70)
 	void UploadPaycodeInvalid() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity Paycode Upload with Invalid Data.");
@@ -895,7 +895,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 57)
+	@Test(priority = 71)
 	void UploadPaycodeEmpty() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity Paycode Upload with Empty File.");
@@ -907,7 +907,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 58)
+	@Test(priority = 72)
 	void SearchPaycode() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate searchbox Apply Button Of Paycode Mapping Tab from Onboard Entity Module");
@@ -919,7 +919,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 59)
+	@Test(priority = 73)
 	void SearchPaycodeClear() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate Onboard Entity's Paycode Mapping Clear Button");
@@ -931,7 +931,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 60)
+	@Test(priority = 74)
 	void PaycodeDeleteCancel() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Delete Paycode Mapping 'Cancel' Button");
@@ -943,7 +943,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 61)
+	@Test(priority = 75)
 	void PaycodeDelete() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether Paycode Mapping is getting deleted or not");
@@ -957,7 +957,7 @@ public class DistributorTest  extends BasePage {
 	
 ///////--------------------------Onboard Entity - User-Branch Mapping -------------------------------------------///////////////////////
 
-	@Test(priority = 62) //29/01/2025
+	@Test(priority = 76) //29/01/2025
 	void Mapuser() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether map user button is working or not");
@@ -969,7 +969,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 63) 
+	@Test(priority = 77) 
 	void Mapuseralready() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error massage when  Existing user and branch mapping data which is already mapped to map user is working or not");
@@ -981,7 +981,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 64)
+	@Test(priority = 78)
 	void MapuserManagement() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether map user(management) button is working or not");
@@ -993,7 +993,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 65)
+	@Test(priority = 79)
 	void MapuserManagementAlredy() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Validate error massage when Existing user and branch mapping data which is already mapped to map user(management) is working or not");
@@ -1005,7 +1005,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 66)
+	@Test(priority = 80)
 	void UserMapDelete() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether mapping is getting deleted or not");
@@ -1017,7 +1017,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 67)
+	@Test(priority = 81)
 	void MapuserDeleteCancel() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("Delete User Mapping 'Cancel' Button working or not");
@@ -1029,7 +1029,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 68)
+	@Test(priority = 82)
 	void UserMapFilter() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether  User Mapping apply button is working or not");
@@ -1041,7 +1041,7 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
-	@Test(priority = 69)
+	@Test(priority = 83)
 	void UserMapFilterClear() throws InterruptedException, IOException, AWTException
 	{
 		test = extent.startTest("To check whether  User Mapping clear button is working or not.");
@@ -1051,6 +1051,110 @@ public class DistributorTest  extends BasePage {
 		  
 		extent.endTest(test);
 		extent.flush();
+		
+	}
+	
+///////--------------------------Manage Masters - Leave Type -------------------------------------------///////////////////////
+	
+	@Test(priority = 84) //25/02/2025
+	void Exportleavetype() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Leave Type - To check whether excel is getting downloaded or not");
+		
+			Methods.Exportleavetype(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 85) //25/02/2025
+	void Searchleave() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Leave Type - To check whether search field is working or not");
+		
+			Methods.Searchleave(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 86) //25/02/2025
+	void SearchleaveClear() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Leave Type - To check whether search field clear or not");
+		
+			Methods.SearchleaveClear(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+///////--------------------------Manage Masters - Paycode Mapping -------------------------------------------///////////////////////
+	
+	@Test(priority = 87) //25/02/2025
+	void PayCodeAddNewMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Validate Add New Paycode With Valid Data");
+		
+			Methods.PayCodeAddNewMM(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 88) 
+	void PayCodeAddNewInvalidMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Validate Add new Paycode With Invalid Data");
+		
+			Methods.PayCodeAddNewInvalidMM(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 89) 
+	void PayCodeEditMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Validate Paycode 'Edit' Button.");
+		
+			Methods.PayCodeEditMM(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 90) //2 test cases//26/02/2025
+	void UploadPaycodeMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Validate  Paycode Upload with Valid Data.");
+		
+			Methods.UploadPaycodeMM(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 91)
+	void UploadPaycodeInvalidMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Validate Manage Masters Paycode Upload with Invalid Data.");
+		
+		boolean text	=	Methods.UploadPaycodeInvalidMM(test);
+		if(text==true)
+		{
+			test.log(LogStatus.PASS, "Error text file should get downloaded with proper error message along with row number.");
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Failure : Error file does not downloaded.");
+		}
+		  
+		
+		extent.endTest(test);
+		extent.flush();
 	}
 	
 	
@@ -1058,7 +1162,7 @@ public class DistributorTest  extends BasePage {
 	@AfterMethod
   	void browserClosing() throws InterruptedException
   	{
-		//closeBrowser();
+	//	closeBrowser();
   		//Thread.sleep(1000);
   		//getDriver().close();
   	}	       

@@ -412,6 +412,17 @@ public class Locators extends BasePage {
 		return user;
 	}
 	
+	public static WebElement EDLIExcemption()	{
+		user = getDriver().findElement(By.xpath("(//button[@aria-label='Select'])[14]"));
+		return user;
+	}
+	
+	public static WebElement EDLIExcemption1( )		//Method for closing Message Popup
+	{
+		user = getDriver().findElement(By.xpath("//span[contains(text(),'No')]"));
+		return user;
+	}
+	
 	public static WebElement BonusPer( )		//Method for closing Message Popup
 	{
 		user = getDriver().findElement(By.xpath("//input[@placeholder='Enter Bonus Percentage']"));
@@ -637,7 +648,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement ValMsg( )		
 	{
-		user = getDriver().findElement(By.xpath("//div[contains(text(),'PF Code must be 15 characters, no leading 0.')]"));
+		user = getDriver().findElement(By.xpath("//div[contains(text(),' PF Code must be either \"NA\" or 15 alphanumeric characters (no leading 0). ')]"));
 		return user;
 	}
 	
@@ -662,7 +673,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement DownloadTemplate ( )		
 	{
-		user = getDriver().findElement(By.xpath("//img[@title='Download Template']"));
+		user = getDriver().findElement(By.xpath("//img[@title='Sample Template']"));
 		return user;
 	}
 	
@@ -722,7 +733,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement  EntityLocation ( )		
 	{
-		user = getDriver().findElement(By.xpath("//button[normalize-space()='EntityLocation']"));
+		user = getDriver().findElement(By.xpath("//button[normalize-space()='Entity Location']"));
 		return user;
 	}
 	
@@ -893,7 +904,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement  BusinessType1( )		
 	{
-		user = getDriver().findElement(By.xpath("//span[contains(text(),'IT')]"));
+		user = getDriver().findElement(By.xpath("//ul[@class='k-list-ul']/li[2]"));
 		return user;
 	}
 	
@@ -971,7 +982,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement  UpoadBranchSam( )		
 	{
-		user = getDriver().findElement(By.xpath("//img[@title='Bulk Upload']"));
+		user = getDriver().findElement(By.xpath("//img[@title='Sample Template']"));
 		return user;
 	}
 	
@@ -1147,7 +1158,7 @@ public class Locators extends BasePage {
 	
 	public static WebElement   SearchUserm1 ( )		
 	{
-		user = getDriver().findElement(By.xpath("//span[normalize-space()='sagar (sagaryadav@gmail.com)']"));
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Sagar (sagaryadav478@gmail.com)']"));
 		return user;
 	}
 	
@@ -1205,12 +1216,35 @@ public class Locators extends BasePage {
 		return user;
 	}
 	
+	public static WebElement  ManageMasters  ( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[normalize-space()='Manage Masters']"));
+		return user;
+	}
 	
+	public static WebElement  Gridcount  ( )		
+	{
+		user = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-leave-type-master/kendo-grid/kendo-pager/kendo-pager-info"));
+		return user;
+	}
 	
+	public static WebElement  LeaveType  ( )		
+	{
+		user = getDriver().findElement(By.xpath("//a[normalize-space()='Leave Type']"));
+		return user;
+	}
 	
+	public static WebElement  Search( )		
+	{
+		user = getDriver().findElement(By.xpath("//*[@class='k-svg-i-caret-alt-down k-button-icon k-svg-icon k-icon']"));
+		return user;
+	}
 	
-	
-	
+	public static WebElement  SearchLT  ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='k-list-ul']/li)[2]"));
+		return user;
+	}
 	
 	
 	
