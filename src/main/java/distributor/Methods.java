@@ -2010,7 +2010,7 @@ Locators.DownloadTemplate().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\EntityUpload_AVAENTITY_Invalid.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\EntityUpload_AVACORED5_Invalid.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -2084,7 +2084,7 @@ Locators.CheckBox().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\EntityUpload_AVAENTITY_Empty.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\EntityUpload_AVACORED5_Empty.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -2337,7 +2337,7 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2527,7 +2527,7 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2564,7 +2564,7 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2601,7 +2601,7 @@ Locators.CheckBox().click();
 		Locators.Browse().click();
 		Thread.sleep(3000);
 		Robot robot=new Robot();
-		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVAENTITY_20250221T051451141Z.xlsx");
+		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\LocationSampleUpdate_AVACORED5_20250221T051451141Z.xlsx");
 		 //copy above file to clipboard
 		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
 		
@@ -2659,7 +2659,7 @@ Locators.CheckBox().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2752,7 +2752,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2833,7 +2833,7 @@ Locators.UpoadBranchSam().click();
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2915,7 +2915,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -2995,7 +2995,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3073,7 +3073,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3151,7 +3151,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3232,7 +3232,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3310,7 +3310,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3391,7 +3391,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3432,7 +3432,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3476,7 +3476,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3523,7 +3523,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3566,7 +3566,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3648,7 +3648,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3730,7 +3730,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3831,7 +3831,7 @@ Locators.UpoadBranchSam().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3907,7 +3907,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -3986,7 +3986,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4030,7 +4030,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	 	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	 	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 			Thread.sleep(3000);
 			
 					
@@ -4092,7 +4092,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4153,7 +4153,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4196,7 +4196,7 @@ Locators.UploadAddressMapping().click();
 
 				
 			
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4248,7 +4248,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4332,7 +4332,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4415,7 +4415,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4473,7 +4473,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4569,7 +4569,7 @@ Locators.UploadAddressMapping().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4669,7 +4669,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4749,7 +4749,7 @@ Locators.SamplePaycod().click();
 
 				
 			
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4795,7 +4795,7 @@ Locators.SamplePaycod().click();
 
 				
 			
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4842,7 +4842,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4886,7 +4886,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -4926,7 +4926,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5003,7 +5003,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5081,7 +5081,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5158,7 +5158,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5236,7 +5236,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5279,7 +5279,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5430,7 +5430,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5495,7 +5495,7 @@ Locators.SamplePaycod().click();
 		
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5531,9 +5531,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 		 Locators.Dashboard().click();
@@ -5652,9 +5652,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	//  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 		 Locators.Dashboard().click();
@@ -5692,9 +5692,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-		Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 		 Locators.Dashboard().click();
@@ -5734,9 +5734,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	//  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5795,7 +5795,7 @@ Locators.SamplePaycod().click();
 				String text = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
 				//List<WebElement> custdd = getDriver().findElements(By.xpath("//*[@class='k-input-value-text']"));
 			//	selectOptionFromDropDown_bs(custdd, "Active");
-				if(text.equalsIgnoreCase("Details Saved Successfully"))
+				if(text.equalsIgnoreCase("Data Saved Successfully..."))
 				{
 					
 					test.log(LogStatus.PASS,"Message Displayed : "+text);
@@ -5818,9 +5818,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5902,9 +5902,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	 // 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -5960,9 +5960,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	//  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -6052,9 +6052,9 @@ Locators.SamplePaycod().click();
 		Thread.sleep(3000);
 	    
 		
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
 
-	  	Locators.Searchentities().sendKeys("AVAENTITY"); // Writing Task title
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
 		Thread.sleep(3000);
 		
 				
@@ -6144,6 +6144,610 @@ Locators.SamplePaycod().click();
 				}
 		  	
 	}
+	
+	public static void UploadPaycodeEmptyMM ( ExtentTest test) throws InterruptedException, IOException, AWTException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+				Thread.sleep(3000);
+                 Locators.Dashboard().click();
+				Thread.sleep(3000);
+				Locators.ManageMasters().click();
+				Thread.sleep(5000);
+				
+				Locators.PaycodeMapping().click();
+				Thread.sleep(3000);
+		
+		Locators.uploadPaycod().click();
+		
+		
+		Thread.sleep(3000);
+Locators.SamplePaycod().click();
+		Thread.sleep(3000);
+		
+	
+		
+		Locators.Browse().click();
+		Thread.sleep(3000);
+		Robot robot=new Robot();
+		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\SamplePaycodeMappingUpload (3).xlsx");
+		 //copy above file to clipboard
+		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+		
+		 //Now press CRTL
+		
+		 robot.keyPress(KeyEvent.VK_CONTROL);
+		 Thread.sleep(1000);
+		
+		 //PRESS V
+		 robot.keyPress(KeyEvent.VK_V);
+		 Thread.sleep(1000);
+		
+		 //Release V
+		 robot.keyRelease(KeyEvent.VK_V);
+		
+		
+		 //Release CRTL
+		 robot.keyRelease(KeyEvent.VK_CONTROL);
+		
+		 //PRESS Enter
+		 robot.keyPress(KeyEvent.VK_ENTER);
+		
+		 //Release CRTL
+		 robot.keyRelease(KeyEvent.VK_ENTER);
+		
+		 Thread.sleep(1000);
+				 
+		 Locators.Upload2().click();
+		 Thread.sleep(2000);
+	String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+			
+			
+				test.log(LogStatus.PASS,"Message Displayed : "+text1);
+		
+			
+				Locators.ok().click();
+  	
+				 Thread.sleep(2000);
+		
+		 Thread.sleep(3000);
+		  	
+	}
+	
+	public static void UploadPaycodeforMM ( ExtentTest test) throws InterruptedException, IOException, AWTException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	 // 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+				Thread.sleep(3000);
+                 Locators.Dashboard().click();
+				Thread.sleep(3000);
+				Locators.ManageMasters().click();
+				Thread.sleep(5000);
+				
+				Locators.PaycodeMapping().click();
+				Thread.sleep(3000);
+		
+		Locators.uploadPaycod().click();
+		Thread.sleep(3000);
+
+		
+		Locators.Browse().click();
+		Thread.sleep(3000);
+		Robot robot=new Robot();
+		 StringSelection filepath= new  StringSelection("D:\\Automation File\\Labour Auto\\work.txt");
+		 //copy above file to clipboard
+		 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(filepath, null);
+		
+		 //Now press CRTL
+		
+		 robot.keyPress(KeyEvent.VK_CONTROL);
+		 Thread.sleep(1000);
+		
+		 //PRESS V
+		 robot.keyPress(KeyEvent.VK_V);
+		 Thread.sleep(1000);
+		
+		 //Release V
+		 robot.keyRelease(KeyEvent.VK_V);
+		
+		
+		 //Release CRTL
+		 robot.keyRelease(KeyEvent.VK_CONTROL);
+		
+		 //PRESS Enter
+		 robot.keyPress(KeyEvent.VK_ENTER);
+		
+		 //Release CRTL
+		 robot.keyRelease(KeyEvent.VK_ENTER);
+		
+		 Thread.sleep(1000);
+				 
+		// Locators.Upload2().click();
+		
+			Thread.sleep(3000);
+			
+			String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+			
+			if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+				test.log(LogStatus.PASS,"Message Displayed : "+text1);
+		
+			}else {
+				test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+			}
+				Locators.ok().click();
+  	
+		  	
+	}
+	
+	public static void UploadPaycodeNoMM ( ExtentTest test) throws InterruptedException, IOException, AWTException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	 // 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+				Thread.sleep(3000);
+                 Locators.Dashboard().click();
+				Thread.sleep(3000);
+				Locators.ManageMasters().click();
+				Thread.sleep(5000);
+				
+				Locators.PaycodeMapping().click();
+				Thread.sleep(3000);
+		
+		Locators.uploadPaycod().click();
+		Thread.sleep(3000);
+
+		
+		 Locators.Upload2().click();
+		
+			Thread.sleep(3000);
+			
+			String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+			
+			if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+				test.log(LogStatus.PASS,"Message Displayed : "+text1);
+		
+			}else {
+				test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+			}
+				Locators.ok().click();
+  	
+		  	
+	}
+	
+	public static void SearchPaycodeMM ( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	 // 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+				
+			
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+		Thread.sleep(3000);
+        Locators.Dashboard().click();
+		Thread.sleep(3000);
+		Locators.ManageMasters().click();
+		Thread.sleep(5000);
+		
+		Locators.PaycodeMapping().click();
+		Thread.sleep(3000);
+
+
+		Locators.Search().click();
+		Thread.sleep(3000);
+		Locators.SearchLT().click();
+		Thread.sleep(3000);
+
+			 Locators.Apply().click();
+				Thread.sleep(3000);
+	
+		Thread.sleep(4000);
+		String text = getDriver().findElement(By.xpath("(//*[@class='cell-content'])[1]")).getText();
+		
+					
+				test.log(LogStatus.PASS, "Searched paycode should get reflected in the grid, along with header name, paycode type, sequence order, ESI applicable, PF applicable, PT applicable, LWF applicable.");
+				test.log(LogStatus.PASS, "Paycode selected : "+text);
+					
+		
+	}
+	
+	public static void SearchPaycodeClearMM ( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	//  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+				
+			
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+		Thread.sleep(3000);
+        Locators.Dashboard().click();
+		Thread.sleep(3000);
+		Locators.ManageMasters().click();
+		Thread.sleep(5000);
+		
+		Locators.PaycodeMapping().click();
+		Thread.sleep(3000);
+
+
+		Locators.Search().click();
+		Thread.sleep(3000);
+		Locators.SearchLT().click();
+		Thread.sleep(3000);
+
+			 Locators.Apply().click();
+				Thread.sleep(3000);
+	
+						if(Locators.ClearFilter().isEnabled()) {
+							 
+							test.log(LogStatus.PASS,  " Clear button working successfully."); 
+							Locators.ClearFilter().click();
+					 }
+					 else
+					 {
+					 	test.log(LogStatus.FAIL, "Clear button does not working properly.");
+					 }
+					  	 Thread.sleep(3000);
+			
+	}
+	
+	public static void PaycodeDeleteCancelMM( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+		Thread.sleep(3000);
+        Locators.Dashboard().click();
+		Thread.sleep(3000);
+		Locators.ManageMasters().click();
+		Thread.sleep(5000);
+		
+		Locators.PaycodeMapping().click();
+		Thread.sleep(3000);
+					
+				
+				Locators.Deletepaycode().click();
+				Thread.sleep(3000);
+				
+				 if(Locators.DeleteCan().isEnabled()) {
+					 
+						test.log(LogStatus.PASS,  " Cancel' button working successfully."); 
+						Locators.DeleteCan().click();
+				 }
+				 else
+				 {
+				 	test.log(LogStatus.FAIL, "'Cancel' button does not working");
+				 }
+				  	 Thread.sleep(3000);	
+					Thread.sleep(3000);	
+		  	
+	}
+	
+	public static void PaycodeDeleteMM( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	 // 	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+		Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+		Thread.sleep(3000);
+        Locators.Dashboard().click();
+		Thread.sleep(3000);
+		Locators.ManageMasters().click();
+		Thread.sleep(5000);
+		
+		Locators.PaycodeMapping().click();
+		Thread.sleep(3000);
+					
+				
+				Locators.Deletepaycode().click();
+				Thread.sleep(3000);
+				String text = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+				Locators.DeleteOk().click();
+				Thread.sleep(3000);
+				String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
+				
+				if(text1.equalsIgnoreCase("Data Deleted Successfully")) {
+					test.log(LogStatus.PASS,"Message Displayed : "+text1);
+			
+				}else {
+					test.log(LogStatus.FAIL,"Message Displayed : "+text1);
+				}
+					Locators.ok().click();
+					
+					Thread.sleep(3000);
+				
+				
+		  	  
+	}
+	
+	public static void ExportSM( ExtentTest test, String type) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+		 Locators.Dashboard().click();
+			Thread.sleep(3000);
+			Locators.ManageMasters().click();
+			Thread.sleep(5000);
+			Locators.StatutoryMaster().click();
+			Thread.sleep(3000);
+			
+			Locators.ComplianceType().click();
+			Thread.sleep(2000);
+			if(type.equalsIgnoreCase("Challan")) {
+				Locators.ComplianceType1().click();
+				Thread.sleep(3000);
+			}else if(type.equalsIgnoreCase("Register")) {
+				Locators.ComplianceType2().click();
+				Thread.sleep(3000);
+			}else {
+				Locators.ComplianceType3().click();
+				Thread.sleep(3000);
+			}
+			
+		
+			Locators.Apply().click();
+				 Thread.sleep(3000);
+				 JavascriptExecutor js = (JavascriptExecutor) getDriver();
+					js.executeScript("window.scrollBy(0,300)");	
+					Thread.sleep(5000);
+				 		
+					Locators.Gridcount1().click();					//Clicking on Text of total items just to scroll down.
+					Thread.sleep(1000);
+					String s = 	Locators.Gridcount1().getText();
+					Thread.sleep(8000);
+					String[] bits = s.split(" ");								//Splitting the String
+					String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+					int count1 = Integer.parseInt(compliancesCount);
+				
+					if(compliancesCount.equalsIgnoreCase("to"))
+					{
+						Thread.sleep(5000);
+					   s = Locators.Gridcount1().getText();
+						bits = s.split(" ");
+			        
+					}
+					
+					Thread.sleep(2000);
+			        JavascriptExecutor js1 = (JavascriptExecutor) getDriver();
+			        
+			        js1.executeScript("window.scrollBy(0,-1000)");
+			        Thread.sleep(2000);
+
+			Thread.sleep(1000);
+			
+			File dir = new File("C:\\Users\\mayurig\\Downloads");
+			File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+			Thread.sleep(1000);
+			Locators.Export().click();
+			Thread.sleep(9000);	
+			test.log(LogStatus.PASS, " File downloaded successfully.");
+
+			Thread.sleep(5500);
+			File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+			File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+			if(dirContents.length < allFilesNew.length)
+			{
+				
+				
+				File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+			    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+			    {
+			       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+			       {
+			           lastModifiedFile = allFilesNew[i];
+			       }
+			    }
+				
+				Thread.sleep(1000);
+				fis = new FileInputStream(lastModifiedFile);
+				workbook = new XSSFWorkbook(fis);
+				sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+				/*
+				int no = sheet.getFirstRowNum();
+				Row row = sheet.getRow(no);
+				Cell c1 = row.getCell(0);
+				int records =(int) c1.getNumericCellValue();
+				*/
+				sheet = workbook.getSheetAt(0);
+				int columnNumber = 3;
+				int rowCount = 0;
+				int actualRow=0;
+				
+				for(Row row : sheet)
+				{
+					
+					Cell cell =row.getCell(columnNumber);
+					if(cell != null) {
+						
+						rowCount++;
+						actualRow = rowCount-1;
+					}
+					
+				}
+				fis.close();
+				
+				if(count1 == actualRow)
+				{
+					//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+					test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+				}
+				else
+				{
+					//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+					test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+				}
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, " :- File does not downloaded.");
+			}
+	  	
+	}
+	
+	public static void SearchSMMM ( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	//  	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+
+				
+			
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+		Thread.sleep(3000);
+        Locators.Dashboard().click();
+		Thread.sleep(3000);
+		Locators.ManageMasters().click();
+		Thread.sleep(5000);
+		
+		Locators.StatutoryMaster().click();
+		Thread.sleep(3000);
+		
+		Locators.ComplianceType().click();
+		Thread.sleep(2000);
+		
+			Locators.ComplianceType2().click();
+			Thread.sleep(3000);
+
+
+		Locators.Search1().click();
+		Thread.sleep(3000);
+		Locators.SearchLT().click();
+		Thread.sleep(3000);
+
+			 Locators.Apply().click();
+				Thread.sleep(3000);
+	
+		Thread.sleep(4000);
+		String text = getDriver().findElement(By.xpath("(//*[@class='cell-content'])[3]")).getText();
+		
+					
+				test.log(LogStatus.PASS, "Searched Form name should get reflected in the grid");
+				test.log(LogStatus.PASS, "Form name selected : "+text);
+					
+		
+	}
+	
+	
+	public static void SearchSMClear ( ExtentTest test) throws InterruptedException, IOException
+	{		
+		Actions action = new Actions(getDriver());
+		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
+		Thread.sleep(3000);
+	    
+		
+	  //	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[normalize-space()='User']")));	//Wait until records table get visible.
+			
+	  	Locators.Searchentities().sendKeys("AVACORED5"); // Writing Task title
+		Thread.sleep(3000);
+		
+				
+		Thread.sleep(3000);
+        Locators.Dashboard().click();
+		Thread.sleep(3000);
+		Locators.ManageMasters().click();
+		Thread.sleep(5000);
+		
+		Locators.StatutoryMaster().click();
+		Thread.sleep(3000);
+		
+		Locators.ComplianceType().click();
+		Thread.sleep(2000);
+		
+			Locators.ComplianceType2().click();
+			Thread.sleep(3000);
+
+
+		Locators.Search1().click();
+		Thread.sleep(3000);
+		Locators.SearchLT().click();
+		Thread.sleep(3000);
+
+			 Locators.Apply().click();
+				Thread.sleep(3000);
+	
+				if(Locators.ClearFilter().isEnabled()) {
+					 
+					test.log(LogStatus.PASS,  " Clear button working successfully."); 
+					Locators.ClearFilter().click();
+			 }
+			 else
+			 {
+			 	test.log(LogStatus.FAIL, "Clear button does not working properly.");
+			 }
+			  	 Thread.sleep(3000);
+		
+		
+	}
+	
 	
 	
 public static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {

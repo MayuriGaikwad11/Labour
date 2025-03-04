@@ -24,7 +24,7 @@ public class LoginLocators extends BasePage {
 	
 	public static WebElement clickSubmit()	//Method for searching button for Save/Sign-in
 	{
-		submit = getDriver().findElement(By.xpath("//button[@type='submit']"));
+		submit = getDriver().findElement(By.xpath("//input[@type='submit']"));
 		return submit;
 	}
 	

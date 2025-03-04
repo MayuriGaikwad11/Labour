@@ -320,7 +320,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement OverviewNo( )		
 	{
-		clients = getDriver().findElement(By.xpath("//img[@title='View']"));
+		clients = getDriver().findElement(By.xpath("(//img[@title='Overview'])[1]"));
 		return clients;
 	}
 	
@@ -332,13 +332,13 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Active( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'57.9590036')]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[22]"));
 		return clients;
 	}
 	
 	public static WebElement Expired( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'254.942630')]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[19]"));
 		return clients;
 	}
 	
@@ -356,13 +356,13 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Overdue( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'80.0603627')]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[9]"));
 		return clients;
 	}
 	
 	public static WebElement Complied( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'357.484847')]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[8]"));
 		return clients;
 	}
 	
@@ -387,13 +387,13 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement readTotalItemsD( )		
 	{
-		clients = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-entity-dashboard-grid/div[2]/app-grid-action-item/kendo-grid/kendo-pager/kendo-pager-info"));
+		clients = getDriver().findElement(By.cssSelector("body > app-root > div > app-layout > section > div > div > app-client-entity-dashboard-grid > div.col-12.colpadding0.ng-star-inserted > app-grid-action-item > kendo-grid > kendo-pager > kendo-pager-info"));
 		return clients;
 	}
 	
 	public static WebElement ECOverdue( )		
 	{
-		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(10) td:nth-child(3) div:nth-child(1)"));
+		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(4) td:nth-child(3) div:nth-child(1)"));
 		return clients;
 	}
 	
@@ -411,7 +411,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement FCOverdue( )		
 	{
-		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(14) td:nth-child(3) div:nth-child(1)"));
+		clients = getDriver().findElement(By.cssSelector("tbody tr:nth-child(8) td:nth-child(3) div:nth-child(1)"));
 		return clients;
 	}
 	
@@ -435,7 +435,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Open( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
 		return clients;
 	}
 	
@@ -447,7 +447,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Closed( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
 		return clients;
 	}
 	
@@ -477,7 +477,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement Registration( )		
 	{
-		clients = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		clients = getDriver().findElement(By.xpath("(//*[name()='g'])[61]"));
 		return clients;
 	}
 	
@@ -503,7 +503,7 @@ public class ClientLocators extends BasePage{
 	
 	public static WebElement number( )		
 	{
-		clients = getDriver().findElement(By.xpath("//*[@class='month-number number-complete']"));
+		clients = getDriver().findElement(By.xpath("//*[@class='month-number number-overdue']"));
 		return clients;
 	}
 	
@@ -516,6 +516,42 @@ public class ClientLocators extends BasePage{
 	public static WebElement OverviewColse( )		
 	{
 		clients = getDriver().findElement(By.xpath("//*[@class='k-svg-i-x k-button-icon k-svg-icon k-icon ng-star-inserted']"));
+		return clients;
+	}
+	
+	public static WebElement Back( )		
+	{
+		clients = getDriver().findElement(By.xpath("//button[@class='figma-btn-blue']"));
+		return clients;
+	}
+	
+	public static WebElement Download( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='Download'])[1]"));
+		return clients;
+	}
+	
+	public static WebElement InitiateAction( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='Initiate Action'])[1]"));
+		return clients;
+	}
+	
+	public static WebElement selectActivityType( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//span[contains(text(),'Select Activity Type')])[1]"));
+		return clients;
+	}
+	
+	public static WebElement selectActivityType1( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//span[contains(text(),'Approval')])[1]"));
+		return clients;
+	}
+	
+	public static WebElement Sumit( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//button[normalize-space()='Submit'])[1]"));
 		return clients;
 	}
 	
@@ -627,10 +663,23 @@ public class ClientLocators extends BasePage{
 		return clients;
 	}
 	
+	public static WebElement EREdit( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[contains(@title,'Edit')])[2]"));
+		return clients;
+	}
 	
+	public static WebElement EREditP( )		
+	{
+		clients = getDriver().findElement(By.xpath("//span[@title='Existing License']"));
+		return clients;
+	}
 	
-	
-	
+	public static WebElement ViewER( )		
+	{
+		clients = getDriver().findElement(By.xpath("(//img[@title='View'])[1]"));
+		return clients;
+	}
 	
 	
 	

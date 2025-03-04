@@ -49,7 +49,7 @@ public class DistributorTest  extends BasePage {
 	@BeforeTest
 	void setBrowser() throws InterruptedException, IOException
 	{
-		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\LabourAngularProject\\Report\\Labour.html",true);
+		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\LabourAngularProject\\Report\\dIstributor.html",true);
 		test = extent.startTest("Loging In - Distributor admin");
 		test.log(LogStatus.PASS, "Logging into system");
 
@@ -91,7 +91,7 @@ public class DistributorTest  extends BasePage {
 	@Test(priority = 3)
 	void UserEdit() throws InterruptedException, IOException
 	{
-		test = extent.startTest("Validadte Add New Button of User Master Page");
+		test = extent.startTest("Validadte Edit Button of User Master Page");
 		
 		Methods.UserEdit(test);
 		
@@ -742,7 +742,7 @@ public class DistributorTest  extends BasePage {
 		extent.endTest(test);
 		extent.flush();
 	}
-	//check
+	
 	@Test(priority = 59)
 	void UploadAddInvalid() throws InterruptedException, IOException, AWTException
 	{
@@ -1157,12 +1157,154 @@ public class DistributorTest  extends BasePage {
 		extent.flush();
 	}
 	
+	@Test(priority = 92)
+	void UploadPaycodeEmptyMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Validate Manage Masters Paycode Upload with Empty File.");
+		
+			Methods.UploadPaycodeEmptyMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 93)
+	void UploadPaycodeforMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Validate Manage Masters Paycode Upload with Invalid formate File.");
+		
+			Methods.UploadPaycodeforMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 94)
+	void UploadPaycodeNoMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Validate Manage Masters Paycode Upload with without selecting File.");
+		
+			Methods.UploadPaycodeNoMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 95)
+	void SearchPaycodeMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Validate searchbox Apply Button Of Paycode Mapping Tab from Manage Masters Module");
+		
+			Methods.SearchPaycodeMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 96)
+	void SearchPaycodeClearMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Validate Manage Masters Paycode Mapping Clear Button");
+		
+			Methods.SearchPaycodeClearMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 97)
+	void PaycodeDeleteCancelMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - Delete Paycode Mapping 'Cancel' Button");
+		
+			Methods.PaycodeDeleteCancelMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 98)
+	void PaycodeDeleteMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters - To check whether Paycode Mapping is getting deleted or not");
+		
+			Methods.PaycodeDeleteMM(test);
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+///////--------------------------Manage Masters - Statutory Master -------------------------------------------///////////////////////
+	
+	@Test(priority = 99) 
+	void ExportSM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters -Statutory Master - Challan - To check whether excel is getting downloaded or not");
+		
+			Methods.ExportSM(test,"Challan");
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 100) 
+	void ExportSM1() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters -Statutory Master - Register - To check whether excel is getting downloaded or not");
+		
+			Methods.ExportSM(test,"Register");
+		
+		  
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 101) 
+	void ExportSM2() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters -Statutory Master - returns - To check whether excel is getting downloaded or not");
+		
+			Methods.ExportSM(test,"returns");
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 102) 
+	void SearchSMMM() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters -Statutory Master - Validate searchbox Apply Button  from Manage Masters Module");
+		
+			Methods.SearchSMMM(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 103) 
+	void SearchSMClear() throws InterruptedException, IOException, AWTException
+	{
+		test = extent.startTest("Manage Masters -Statutory Master - Validate Clear Button");
+		
+			Methods.SearchSMClear(test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
 	
 
 	@AfterMethod
   	void browserClosing() throws InterruptedException
   	{
-	//	closeBrowser();
+       closeBrowser();
   		//Thread.sleep(1000);
   		//getDriver().close();
   	}	       

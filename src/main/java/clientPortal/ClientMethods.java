@@ -39,11 +39,11 @@ public class ClientMethods extends BasePage {
 	public static XSSFWorkbook workbook = null;	//Excel sheet workbook variable
 	public static XSSFSheet sheet = null;		//Sheet variable
 	
-	 static String filePath ="D:\\eclipse-workspace\\LabourAngularProject\\TestData\\Labour.xlsx";
+	 static String filePath ="D:\\LabourAngularProject\\TestData\\Labour.xlsx";
 
 	
 	public static void filterEntity ( ExtentTest test) throws InterruptedException, IOException
-	{		
+	{Thread.sleep(7000);		
 		Actions action = new Actions(getDriver());
 		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
 		Thread.sleep(3000);
@@ -54,7 +54,7 @@ public class ClientMethods extends BasePage {
 	  	
 		ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
-	  	ClientLocators.EntityTri().click();
+	  	ClientLocators.EntityTri1().click();
 		Thread.sleep(2000);
 		
 		ClientLocators.AVAENTEST().click();
@@ -65,13 +65,13 @@ public class ClientMethods extends BasePage {
 	  	ClientLocators.SelectYear22().click();
 		Thread.sleep(2000);
 	 	ClientLocators.Apply().click();
-			Thread.sleep(4000);
+			Thread.sleep(8000);
 		  
-		  	
+			Thread.sleep(8000);
 	}
 	
 	public static void Entities(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -88,12 +88,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Entities in the grid = "+CatcountGrid+" | Dashboard Entities  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Entities in the grid = "+CatcountGrid+" | Dashboard Entities Count = "+CategoriesCountDas);
 		}
@@ -103,14 +103,14 @@ public class ClientMethods extends BasePage {
 	
 	
 	public static void EntitiesSearch(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	
 	ClientLocators.Entities().click();
 		Thread.sleep(5000);
-		try {
+		try {Thread.sleep(5000);
 		ClientLocators.Search().sendKeys("AVACORED5",Keys.ENTER);
 		Thread.sleep(4000);
 		String text = getDriver().findElement(By.xpath("//div[@title='AVACORED5']")).getText();
@@ -120,14 +120,14 @@ public class ClientMethods extends BasePage {
 		test.log(LogStatus.PASS, "entity selected : "+text);
 		
 		Thread.sleep(3000);
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			test.log(LogStatus.PASS, "no record available");
 		}
 		
 	}
 	
 	public static void Locations(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -144,12 +144,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Locations in the grid = "+CatcountGrid+" | Dashboard Locations  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Locations in the grid = "+CatcountGrid+" | Dashboard Locations Count = "+CategoriesCountDas);
 		}
@@ -158,31 +158,31 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void LocationsSearch(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 	
 	ClientLocators.Locations().click();
 		Thread.sleep(5000);
-		try {
-		ClientLocators.Search().sendKeys("Kalain",Keys.ENTER);
+		try {Thread.sleep(5000);
+		ClientLocators.Search().sendKeys("Continental",Keys.ENTER);
 		Thread.sleep(4000);
-		String text = getDriver().findElement(By.xpath("//div[@title='Kolhapur']")).getText();
+		String text = getDriver().findElement(By.xpath("//div[@title='Continental']")).getText();
 		
 			
 		test.log(LogStatus.PASS, "Selected Locations name along with their details should get reflected in the grid.");
 		test.log(LogStatus.PASS, "Locations selected : "+text);
 		
 		Thread.sleep(3000);
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			test.log(LogStatus.PASS, "no record available");
 		}
 		
 	}
 	
 	public static void AssignedCompliances(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -204,12 +204,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Assigned Compliances in the grid = "+CatcountGrid+" | Dashboard Assigned Compliances  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Assigned Compliances in the grid = "+CatcountGrid+" | Dashboard Assigned Compliances Count = "+CategoriesCountDas);
 		}
@@ -218,7 +218,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void exportcount(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -239,16 +239,16 @@ public class ClientMethods extends BasePage {
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void OverviewAC(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -272,6 +272,8 @@ public class ClientMethods extends BasePage {
 	
 	public static void ExpiredRegistrations(  ExtentTest test) throws InterruptedException, IOException
 	{
+		
+		Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -289,12 +291,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Expired Registrations in the grid = "+CatcountGrid+" | Dashboard Expired Registrations  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Expired Registrations in the grid = "+CatcountGrid+" | Dashboard Expired Registrations Count = "+CategoriesCountDas);
 		}
@@ -302,8 +304,259 @@ public class ClientMethods extends BasePage {
 		
 	}
 	
+	public static void ExpiredRegistrationsEdit( ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+	
+	ClientLocators.ExpiredRegistrations().click();
+		Thread.sleep(5000);
+		
+		ClientLocators.EREdit().click();
+		Thread.sleep(5000);
+		String item = ClientLocators.EREditP().getText();
+		Thread.sleep(4000);
+		if(item.equalsIgnoreCase("Existing License")) {
+			Thread.sleep(5000);
+			test.log(LogStatus.PASS,  "Clicking on Edit button page redirect to the Existing License page");
+		}else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,  " view button not working ");
+
+		}
+		
+		
+	}
+	
+	public static void exportER(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	
+		ClientLocators.ExpiredRegistrations().click();
+		Thread.sleep(5000);
+		ClientLocators.EREdit().click();
+		Thread.sleep(5000);
+		
+		Thread.sleep(3000);
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
+		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+		Thread.sleep(500);
+		Locators.Export().click();
+
+		Thread.sleep(8000);
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+		Thread.sleep(3000);
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
+			test.log(LogStatus.PASS,  " File downloaded successfully.");
+		} else {Thread.sleep(5000);
+			test.log(LogStatus.FAIL,  " File does not downloaded.");
+		}
+		
+	}
+	
+	public static void ERSearch(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	
+		ClientLocators.ExpiredRegistrations().click();
+		Thread.sleep(5000);
+		ClientLocators.EREdit().click();
+		Thread.sleep(5000);
+		try {Thread.sleep(5000);
+		ClientLocators.Search().sendKeys("400053",Keys.ENTER);
+		Thread.sleep(4000);
+		String text = getDriver().findElement(By.xpath("//div[@title='400053']")).getText();
+		
+			
+		test.log(LogStatus.PASS, "Selected Location along with their details should get reflected in the grid.");
+		test.log(LogStatus.PASS, "Location selected : "+text);
+		
+		Thread.sleep(3000);
+		}catch(Exception e) {Thread.sleep(5000);
+			test.log(LogStatus.PASS, "no record available");
+		}
+		
+	}
+	
+	public static void ERSearchClear(  ExtentTest test) throws InterruptedException, IOException
+	{Thread.sleep(5000);
+	
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	
+		ClientLocators.ExpiredRegistrations().click();
+		Thread.sleep(5000);
+		ClientLocators.EREdit().click();
+		Thread.sleep(5000);
+	
+		ClientLocators.Search().sendKeys("400053",Keys.ENTER);
+		Thread.sleep(4000);
+		
+		 if(ClientLocators.Clear().isEnabled()) {Thread.sleep(5000);
+		 
+			test.log(LogStatus.PASS,  " Clear button working successfully."); 
+			ClientLocators.Clear().click();
+	 }
+	 else
+	 {Thread.sleep(5000);
+	 	test.log(LogStatus.FAIL, "Clear button does not working properly.");
+	 }
+	  	 Thread.sleep(3000);
+	  
+		
+	}
+	
+	 public static void ERviewBack( ExtentTest test) throws InterruptedException, IOException
+	  	{Thread.sleep(5000);
+	  	
+	      	JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	      	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+	      	ClientLocators.ExpiredRegistrations().click();
+			Thread.sleep(5000);
+			ClientLocators.EREdit().click();
+			Thread.sleep(5000);
+	  		
+	  		ClientLocators.ViewER().click();
+	  		Thread.sleep(5000);
+	  		if(ClientLocators.Back().isEnabled()) {Thread.sleep(5000);
+			 
+			test.log(LogStatus.PASS,  " Back button working successfully."); 
+			ClientLocators.Back().click();
+	 }
+	 else
+	 {Thread.sleep(5000);
+	 	test.log(LogStatus.FAIL, "Back button does not working properly.");
+	 }
+	  		
+	  		
+	  	}
+	 
+	 public static void ERview( ExtentTest test) throws InterruptedException, IOException
+	  	{Thread.sleep(5000);
+	  	
+	      	JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	      	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+	      	ClientLocators.ExpiredRegistrations().click();
+			Thread.sleep(5000);
+			ClientLocators.EREdit().click();
+			Thread.sleep(5000);
+	  		
+	  		ClientLocators.ViewER().click();
+	  		Thread.sleep(5000);
+	       	ClientLocators.OverviewColse().click();
+	  		Thread.sleep(5000);
+	  		test.log(LogStatus.PASS,  " view successfully.");
+	  		
+	  	}
+	 
+	 public static void exportERE(  ExtentTest test) throws InterruptedException, IOException
+		{Thread.sleep(5000);
+		
+			Thread.sleep(2000);
+			JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		
+			ClientLocators.ExpiredRegistrations().click();
+			Thread.sleep(5000);
+			ClientLocators.EREdit().click();
+			Thread.sleep(5000);
+			
+			Thread.sleep(3000);
+			File dir = new File("C:\\Users\\mayurig\\Downloads");
+			File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
+
+			Thread.sleep(500);
+			ClientLocators.Download().click();
+
+			Thread.sleep(8000);
+			File dir1 = new File("C:\\Users\\mayurig\\Downloads");
+			File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
+				test.log(LogStatus.PASS,  " File downloaded successfully.");
+			} else {Thread.sleep(5000);
+				test.log(LogStatus.FAIL,  " File does not downloaded.");
+			}
+			
+		}
+	 
+	 public static void InitiateAction( ExtentTest test) throws InterruptedException, IOException
+	  	{Thread.sleep(5000);
+	  	
+	      	JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	      	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+	      	ClientLocators.ExpiredRegistrations().click();
+			Thread.sleep(5000);
+			ClientLocators.EREdit().click();
+			Thread.sleep(5000);
+	  		
+	  		ClientLocators.InitiateAction().click();
+	  		Thread.sleep(5000);
+	       	ClientLocators.selectActivityType().click();
+	  		Thread.sleep(2000);
+	  		ClientLocators.selectActivityType1().click();
+	  		Thread.sleep(2000);
+	  		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
+	  		ClientLocators.Sumit().click();
+	  		Thread.sleep(2000);
+	  		 By locator = By.xpath("(//h4[@class='f-label'])");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+				Thread.sleep(4000);
+			String text = getDriver().findElement(By.xpath("(//h4[@class='f-label'])")).getText();
+			
+			if(!text.equalsIgnoreCase("SubActivity saved successfully"))
+			{
+				
+				test.log(LogStatus.PASS,"Message Displayed : "+text);
+			}
+			else
+			{
+				
+				test.log(LogStatus.FAIL,"Message Displayed : "+text);
+				
+	}
+			Locators.ok().click();
+			Thread.sleep(4000);
+	  		
+	  	}
+	
+	 public static void InitiateActionBack( ExtentTest test) throws InterruptedException, IOException
+	  	{Thread.sleep(5000);
+	  	
+	      	JavascriptExecutor js = (JavascriptExecutor) getDriver();
+	      	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
+	      	ClientLocators.ExpiredRegistrations().click();
+			Thread.sleep(5000);
+			ClientLocators.EREdit().click();
+			Thread.sleep(5000);
+	  		
+	  		ClientLocators.InitiateAction().click();
+	  		Thread.sleep(5000);
+	  		if(ClientLocators.Back().isEnabled()) {Thread.sleep(5000);
+			 
+			test.log(LogStatus.PASS,  " Back button working successfully."); 
+			ClientLocators.Back().click();
+	 }
+	 else
+	 {Thread.sleep(5000);
+	 	test.log(LogStatus.FAIL, "Back button does not working properly.");
+	 }
+	  		
+			
+			
+	  		
+	  	}
+	
+	 
 	public static void OpenNotices( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -321,12 +574,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Open Notices in the grid = "+CatcountGrid+" | Dashboard Open Notices  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Open Notices in the grid = "+CatcountGrid+" | Dashboard Open Notices Count = "+CategoriesCountDas);
 		}
@@ -335,7 +588,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void OpenNoticesView( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -348,9 +601,9 @@ public class ClientMethods extends BasePage {
 		Thread.sleep(5000);
 		String item = ClientLocators.Viewpage().getText();
 		Thread.sleep(4000);
-		if(item.equalsIgnoreCase("View Notices")) {
+		if(item.equalsIgnoreCase("View Notices")) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Clicking on view button page redirect to the view notices page");
-		}else {
+		}else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " view button not working ");
 
 		}
@@ -359,7 +612,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void ViewAddNew ( ExtentTest test) throws InterruptedException, IOException, AWTException
-	{		
+	{Thread.sleep(5000);		
 		Actions action = new Actions(getDriver());
 		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
 		Thread.sleep(3000);
@@ -476,12 +729,12 @@ public class ClientMethods extends BasePage {
 				String text = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
 				
 				if(text.equalsIgnoreCase("Notice Saved Successfully"))
-				{
+				{Thread.sleep(5000);
 					
 					test.log(LogStatus.PASS,"Message Displayed : "+text);
 				}
 				else
-				{
+				{Thread.sleep(5000);
 					
 					test.log(LogStatus.FAIL,"Message Displayed : "+text);
 					
@@ -493,7 +746,7 @@ public class ClientMethods extends BasePage {
 	
 	
 	public static void exportNotice(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -517,16 +770,16 @@ public class ClientMethods extends BasePage {
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void NoticeSearch(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -536,8 +789,8 @@ public class ClientMethods extends BasePage {
 		
 		ClientLocators.View().click();
 		Thread.sleep(5000);
-		try {
-		ClientLocators.Search().sendKeys("24225",Keys.ENTER);
+		try {Thread.sleep(5000);
+		ClientLocators.Search().sendKeys("123344",Keys.ENTER);
 		Thread.sleep(4000);
 		String text = getDriver().findElement(By.xpath("//div[@title='24225']")).getText();
 		
@@ -546,14 +799,14 @@ public class ClientMethods extends BasePage {
 		test.log(LogStatus.PASS, "Notice No selected : "+text);
 		
 		Thread.sleep(3000);
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			test.log(LogStatus.PASS, "no record available");
 		}
 		
 	}
 	
 	public static void NoticeSearchClear(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -563,17 +816,17 @@ public class ClientMethods extends BasePage {
 		
 		ClientLocators.View().click();
 		Thread.sleep(5000);
-				ClientLocators.Search().sendKeys("24225",Keys.ENTER);
+				ClientLocators.Search().sendKeys("123344",Keys.ENTER);
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
-		 if(ClientLocators.Clear().isEnabled()) {
+		 if(ClientLocators.Clear().isEnabled()) {Thread.sleep(5000);
 			 
 				test.log(LogStatus.PASS,  " Clear button working successfully."); 
-				Locators.Clear().click();
+				ClientLocators.Clear().click();
 		 }
 		 else
-		 {
+		 {Thread.sleep(5000);
 		 	test.log(LogStatus.FAIL, "Clear button does not working properly.");
 		 }
 		  	 Thread.sleep(3000);
@@ -582,7 +835,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void OpenNoticesEditback( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -602,9 +855,9 @@ public class ClientMethods extends BasePage {
 		
 		String item = ClientLocators.Viewpage().getText();
 		Thread.sleep(4000);
-		if(item.equalsIgnoreCase("View Notices")) {
+		if(item.equalsIgnoreCase("View Notices")) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Clicking on Back button page redirect to the view notices page");
-		}else {
+		}else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " Back button not working ");
 
 		}
@@ -613,7 +866,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void OverviewNotice(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -636,7 +889,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void OpenNoticesback( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -655,9 +908,9 @@ public class ClientMethods extends BasePage {
 		
 		String item = ClientLocators.OpenNoticePage().getText();
 		Thread.sleep(4000);
-		if(item.equalsIgnoreCase("Open Notices")) {
+		if(item.equalsIgnoreCase("Open Notices")) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Clicking on Back button page redirect to the Open Notices page");
-		}else {
+		}else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " Back button not working ");
 
 		}
@@ -666,7 +919,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void RegistrationStatus( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -690,12 +943,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Active in the grid = "+CatcountGrid+" | Dashboard Active  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Active in the grid = "+CatcountGrid+" | Dashboard Active Count = "+CategoriesCountDas);
 		}
@@ -704,7 +957,7 @@ public class ClientMethods extends BasePage {
 	}
 	
 	public static void RegistrationStatusEx( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -728,12 +981,12 @@ public class ClientMethods extends BasePage {
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Expired in the grid = "+CatcountGrid+" | Dashboard Expired  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Expired in the grid = "+CatcountGrid+" | Dashboard Expired Count = "+CategoriesCountDas);
 		}
@@ -743,7 +996,7 @@ public class ClientMethods extends BasePage {
 	
 	
 	public static void RegistrationStatusExport( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -779,14 +1032,14 @@ File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 if(dirContents.length < allFilesNew.length)
-{
+{Thread.sleep(5000);
 	
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
     for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-    {
+    {Thread.sleep(5000);
        if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-       {
+       {Thread.sleep(5000);
            lastModifiedFile = allFilesNew[i];
        }
     }
@@ -807,10 +1060,10 @@ if(dirContents.length < allFilesNew.length)
 	int actualRow=0;
 	
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -820,25 +1073,25 @@ if(dirContents.length < allFilesNew.length)
 	fis.close();
 	
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 }
 else
-{
+{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 }
 	
 	}
 	
 	public static void RegistrationStatusExportE( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -874,14 +1127,14 @@ File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 if(dirContents.length < allFilesNew.length)
-{
+{Thread.sleep(5000);
 	
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
     for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-    {
+    {Thread.sleep(5000);
        if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-       {
+       {Thread.sleep(5000);
            lastModifiedFile = allFilesNew[i];
        }
     }
@@ -902,10 +1155,10 @@ if(dirContents.length < allFilesNew.length)
 	int actualRow=0;
 	
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -915,18 +1168,18 @@ if(dirContents.length < allFilesNew.length)
 	fis.close();
 	
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 }
 else
-{
+{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 }
 	
@@ -934,7 +1187,7 @@ else
 
 	
 	public static void RegistrationSView( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -959,7 +1212,7 @@ else
 	}
 	
 	public static void RegistrationSViewEx( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -985,7 +1238,7 @@ else
 	
 	
 	public static void DownloadActive(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		ClientLocators.Active().click();
 		Thread.sleep(5000);
@@ -1005,16 +1258,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void DownloadActiveEx(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		ClientLocators.Expired().click();
 		Thread.sleep(5000);
@@ -1034,16 +1287,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void RegistrationSHistory( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1060,9 +1313,9 @@ else
 		Thread.sleep(5000);
 		String item = ClientLocators.RegistrationLicencesHistory().getText();
 		Thread.sleep(4000);
-		if(item.equalsIgnoreCase("Registration & Licences History")) {
+		if(item.equalsIgnoreCase("Registration & Licences History")) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Clicking on History button page redirect to the Registration & Licences History page");
-		}else {
+		}else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " History button not working ");
 
 		}
@@ -1070,7 +1323,7 @@ else
 	}
 	
 	public static void RegistrationSHistoryEx( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1087,9 +1340,9 @@ else
 		Thread.sleep(5000);
 		String item = ClientLocators.RegistrationLicencesHistory().getText();
 		Thread.sleep(4000);
-		if(item.equalsIgnoreCase("Registration & Licences History")) {
+		if(item.equalsIgnoreCase("Registration & Licences History")) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Clicking on History button page redirect to the Registration & Licences History page");
-		}else {
+		}else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " History button not working ");
 
 		}
@@ -1097,7 +1350,7 @@ else
 	}
 	
 	public static void RegistrationSHistoryExport(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		ClientLocators.Active().click();
 		Thread.sleep(5000);
@@ -1119,16 +1372,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void RegistrationSHistoryExportEx(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		ClientLocators.Expired().click();
 		Thread.sleep(5000);
@@ -1150,16 +1403,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void RegistrationSExport(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		ClientLocators.Active().click();
 		Thread.sleep(5000);
@@ -1177,9 +1430,9 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
@@ -1187,7 +1440,7 @@ else
 	
 	
 	public static void ActiveSearch(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1196,24 +1449,24 @@ else
 		Thread.sleep(5000);
 		ClientLocators.ActiveCol().click();
 		Thread.sleep(3000);
-		try {
-		ClientLocators.Search().sendKeys("LCN001",Keys.ENTER);
+		try {Thread.sleep(5000);
+		ClientLocators.Search().sendKeys("12309856wrt",Keys.ENTER);
 		Thread.sleep(4000);
-		String text = getDriver().findElement(By.xpath("//div[@title='LCN001']")).getText();
+		String text = getDriver().findElement(By.xpath("//div[@title='12309856wrt']")).getText();
 		
 			
 		test.log(LogStatus.PASS, "Selected License No along with their details should get reflected in the grid.");
 		test.log(LogStatus.PASS, "License No selected : "+text);
 		
 		Thread.sleep(3000);
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			test.log(LogStatus.PASS, "no record available");
 		}
 		
 	}
 	
 	public static void ExpiredSearch(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1222,17 +1475,17 @@ else
 		Thread.sleep(5000);
 		ClientLocators.ExpiredCol().click();
 		Thread.sleep(3000);
-		try {
-		ClientLocators.Search().sendKeys("1234",Keys.ENTER);
+		try {Thread.sleep(5000);
+		ClientLocators.Search().sendKeys("nbvc765",Keys.ENTER);
 		Thread.sleep(4000);
-		String text = getDriver().findElement(By.xpath("//div[@title='1234']")).getText();
+		String text = getDriver().findElement(By.xpath("//div[@title='nbvc765']")).getText();
 		
 			
 		test.log(LogStatus.PASS, "Selected License No along with their details should get reflected in the grid.");
 		test.log(LogStatus.PASS, "License No selected : "+text);
 		
 		Thread.sleep(3000);
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			test.log(LogStatus.PASS, "no record available");
 		}
 		
@@ -1240,7 +1493,7 @@ else
 	
 	
 	public static void RegistrationSearch(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1248,7 +1501,7 @@ else
 		ClientLocators.Active().click();
 		Thread.sleep(5000);
 		
-		try {
+		try {Thread.sleep(5000);
 		ClientLocators.Search().sendKeys("Trade license",Keys.ENTER);
 		Thread.sleep(4000);
 		String text = getDriver().findElement(By.xpath("//div[normalize-space()='Trade license']")).getText();
@@ -1258,14 +1511,14 @@ else
 		test.log(LogStatus.PASS, "License Name selected : "+text);
 		
 		Thread.sleep(3000);
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			test.log(LogStatus.PASS, "no record available");
 		}
 		
 	}
 	
 	public static void CompliancePerformance( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		ClientLocators.SelectEntity().click();
@@ -1294,12 +1547,12 @@ else
 		String string_User =ClientLocators.OverdueGrid().getText();		//Storing old value of Statutory overdue.
 		int	UserCountDas = Integer.parseInt(string_User);
 		if(CategoriesCountDas == UserCountDas)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Overdue in the grid = "+UserCountDas+" | Dashboard Overdue  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Overdue in the grid = "+UserCountDas+" | Dashboard Overdue Count = "+CategoriesCountDas);
 		}
@@ -1308,7 +1561,7 @@ else
 	}
 	
 	public static void PayrollCompliancesOverdue(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1329,7 +1582,9 @@ else
 		
 		ClientLocators.PayrollCompliancesOverdue().click();
 		Thread.sleep(5000);
-		
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
 		ClientLocators.OverviewClose().click();
@@ -1337,12 +1592,18 @@ else
 		Thread.sleep(3000);
 		
 			test.log(LogStatus.PASS,  " Overview successfully.");
-		
+		}else {Thread.sleep(5000);
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
 		
 	}
 	
 	public static void PayrollCompliancesComplie(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1355,7 +1616,7 @@ else
 		Thread.sleep(5000);
 		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
 		String s = ClientLocators.readTotalItemsD().getText();
-		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1364,7 +1625,7 @@ else
 		Thread.sleep(3000);
 		
 		test.log(LogStatus.PASS,  " Overview successfully.");
-		}else {
+		}else {Thread.sleep(5000);
 			Thread.sleep(1000);
 			
 			
@@ -1377,7 +1638,7 @@ else
 	}
 	
 	public static void exportPayrollCompliancesOverdue(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1396,7 +1657,9 @@ else
 		
 		ClientLocators.PayrollCompliancesOverdue().click();
 		Thread.sleep(5000);
-		
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@title,'Overview')])[1]")));
 		Thread.sleep(8000);
@@ -1411,16 +1674,23 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
+		}
+		}else {Thread.sleep(5000);
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
 		}
 		
 	}
 	
 	public static void exportPayrollCompliancesComplied(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1450,14 +1720,14 @@ else
 	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 	if(dirContents.length < allFilesNew.length)
-	{
+	{Thread.sleep(5000);
 
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
 	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-	{
+	{Thread.sleep(5000);
 	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-	   {
+	   {Thread.sleep(5000);
 	       lastModifiedFile = allFilesNew[i];
 	   }
 	}
@@ -1478,10 +1748,10 @@ else
 	int actualRow=0;
 
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -1491,25 +1761,25 @@ else
 	fis.close();
 
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 	}
 	else
-	{
+	{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 	}
 		
 	}
 	
 	public static void exportEcComplied(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1539,14 +1809,14 @@ else
 	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 	if(dirContents.length < allFilesNew.length)
-	{
+	{Thread.sleep(5000);
 
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
 	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-	{
+	{Thread.sleep(5000);
 	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-	   {
+	   {Thread.sleep(5000);
 	       lastModifiedFile = allFilesNew[i];
 	   }
 	}
@@ -1567,10 +1837,10 @@ else
 	int actualRow=0;
 
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -1580,18 +1850,18 @@ else
 	fis.close();
 
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 	}
 	else
-	{
+	{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 	}
 		
@@ -1603,11 +1873,11 @@ else
 	
 	
 	public static void ECOverdue(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		ClientLocators.SelectEntity().click();
+	/*	ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
 		ClientLocators.Gopi().click();
 		Thread.sleep(4000);
@@ -1617,12 +1887,16 @@ else
 		Thread.sleep(2000);
 		
 		ClientLocators.Apply().click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
 		ClientLocators.ECOverdue().click();
 		Thread.sleep(5000);
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
+		
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1631,12 +1905,18 @@ else
 		Thread.sleep(3000);
 		
 			test.log(LogStatus.PASS,  " Overview successfully.");
+	}else {Thread.sleep(5000);
+		Thread.sleep(1000);
 		
+		
+		test.log(LogStatus.PASS, "No records available.");
+		
+	}
 		
 	}
 	
 	public static void ECComplied(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		
 		ClientLocators.Complied().click();
@@ -1647,7 +1927,7 @@ else
 		
 		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
 		String s = ClientLocators.readTotalItemsD().getText();
-		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1656,7 +1936,7 @@ else
 		Thread.sleep(3000);
 		
 		test.log(LogStatus.PASS,  " Overview successfully.");
-		}else {
+		}else {Thread.sleep(5000);
 			Thread.sleep(1000);
 			
 			
@@ -1667,11 +1947,11 @@ else
 	}
 	
 	public static void exportEC(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		ClientLocators.SelectEntity().click();
+	/*	ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
 		ClientLocators.Gopi().click();
 		Thread.sleep(4000);
@@ -1681,7 +1961,7 @@ else
 		Thread.sleep(2000);
 		
 		ClientLocators.Apply().click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
@@ -1689,7 +1969,7 @@ else
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@title,'Overview')])[1]")));
+	//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@title,'Overview')])[1]")));
 		Thread.sleep(8000);
 		Thread.sleep(3000);
 		File dir = new File("C:\\Users\\mayurig\\Downloads");
@@ -1698,25 +1978,25 @@ else
 		Thread.sleep(500);
 		Locators.Export().click();
 		Thread.sleep(5000);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-entity-dashboard-grid/div[3]/kendo-loader/div")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-client-entity-dashboard-grid/div[3]/kendo-loader/div")));
 		Thread.sleep(8000);
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void FCOverdue(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		ClientLocators.SelectEntity().click();
+	/*	ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
 		ClientLocators.Gopi().click();
 		Thread.sleep(4000);
@@ -1726,12 +2006,15 @@ else
 		Thread.sleep(2000);
 		
 		ClientLocators.Apply().click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
 		ClientLocators.FCOverdue().click();
 		Thread.sleep(5000);
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1740,12 +2023,18 @@ else
 		Thread.sleep(3000);
 		
 			test.log(LogStatus.PASS,  " Overview successfully.");
-		
+		}else {Thread.sleep(5000);
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
 		
 	}
 	
 	public static void FCCompioed(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1758,7 +2047,7 @@ else
 		
 		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
 		String s = ClientLocators.readTotalItemsD().getText();
-		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1767,7 +2056,7 @@ else
 		Thread.sleep(3000);
 		
 		test.log(LogStatus.PASS,  " Overview successfully.");
-		}else {
+		}else {Thread.sleep(5000);
 			Thread.sleep(1000);
 			
 			
@@ -1777,11 +2066,11 @@ else
 		
 	}
 	public static void exportFC(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		ClientLocators.SelectEntity().click();
+		/*ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
 		ClientLocators.Gopi().click();
 		Thread.sleep(4000);
@@ -1790,12 +2079,15 @@ else
 	  	ClientLocators.SelectYear25().click();
 		Thread.sleep(2000);
 		ClientLocators.Apply().click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
 		ClientLocators.FCOverdue().click();
 		Thread.sleep(5000);
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@title,'Overview')])[1]")));
@@ -1811,16 +2103,22 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
+	}else {Thread.sleep(5000);
+		Thread.sleep(1000);
 		
+		
+		test.log(LogStatus.PASS, "No records available.");
+		
+	}
 	}
 	
 	public static void exportFCComplies(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1851,14 +2149,14 @@ else
 	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 	if(dirContents.length < allFilesNew.length)
-	{
+	{Thread.sleep(5000);
 
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
 	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-	{
+	{Thread.sleep(5000);
 	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-	   {
+	   {Thread.sleep(5000);
 	       lastModifiedFile = allFilesNew[i];
 	   }
 	}
@@ -1879,10 +2177,10 @@ else
 	int actualRow=0;
 
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -1892,29 +2190,29 @@ else
 	fis.close();
 
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 	}
 	else
-	{
+	{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 	}
 		
 	}
 	
 	public static void ClraOverdue(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		ClientLocators.SelectEntity().click();
+	/*	ClientLocators.SelectEntity().click();
 		Thread.sleep(2000);
 		ClientLocators.Gopi().click();
 		Thread.sleep(4000);
@@ -1924,12 +2222,16 @@ else
 		Thread.sleep(2000);
 		
 		ClientLocators.Apply().click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
 		
 		ClientLocators.ClraOverdue().click();
 		Thread.sleep(5000);
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
+		
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1939,11 +2241,17 @@ else
 		
 			test.log(LogStatus.PASS,  " Overview successfully.");
 		
-		
+		}else {Thread.sleep(5000);
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
+		}
 	}
 	
 	public static void ClraComplied(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1956,7 +2264,7 @@ else
 		
 		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
 		String s = ClientLocators.readTotalItemsD().getText();
-		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
 		
 		ClientLocators.OverviewNo().click();
 		Thread.sleep(5000);
@@ -1965,7 +2273,7 @@ else
 		Thread.sleep(3000);
 		
 		test.log(LogStatus.PASS,  " Overview successfully.");
-		}else {
+		}else {Thread.sleep(5000);
 			Thread.sleep(1000);
 			
 			
@@ -1977,7 +2285,7 @@ else
 	
 	
 	public static void exportClra (  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -1999,7 +2307,7 @@ else
 		Thread.sleep(5000);
 		
 		WebDriverWait wait = new WebDriverWait(getDriver(), (500));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@title,'Overview')])[1]")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@title,'Overview')])[1]")));
 		Thread.sleep(8000);
 		Thread.sleep(3000);
 		File dir = new File("C:\\Users\\mayurig\\Downloads");
@@ -2012,16 +2320,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void exportClraComplied (  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -2051,14 +2359,14 @@ else
 	File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 	if(dirContents.length < allFilesNew.length)
-	{
+	{Thread.sleep(5000);
 
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
 	for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-	{
+	{Thread.sleep(5000);
 	   if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-	   {
+	   {Thread.sleep(5000);
 	       lastModifiedFile = allFilesNew[i];
 	   }
 	}
@@ -2079,10 +2387,10 @@ else
 	int actualRow=0;
 
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -2092,25 +2400,25 @@ else
 	fis.close();
 
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 	}
 	else
-	{
+	{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 	}
 		
 	}
 	
 	public static void exportCP (  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
@@ -2127,7 +2435,11 @@ else
 		Thread.sleep(4000);
 		ClientLocators.Overdue().click();
 		Thread.sleep(5000);
-
+		
+		ClientLocators.readTotalItemsD().click();					//Clicking on Text of total items just to scroll down.
+		String s = ClientLocators.readTotalItemsD().getText();
+		if(!s.equalsIgnoreCase("0 - 0 of 0 items")) {Thread.sleep(5000);
+		
 		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles(); // Counting number of files in directory before download
 
@@ -2138,21 +2450,28 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
+		}
+		}else {Thread.sleep(5000);
+			Thread.sleep(1000);
+			
+			
+			test.log(LogStatus.PASS, "No records available.");
+			
 		}
 		
 	}
 	
 	public static void OpenStatus( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 		
 		Thread.sleep(4000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		js.executeScript("window.scrollBy(0,1000)");
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
@@ -2176,12 +2495,12 @@ else
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Open count in the grid = "+CatcountGrid+" | Dashboard Open Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Open count in the grid = "+CatcountGrid+" | Dashboard Open Count = "+CategoriesCountDas);
 		}
@@ -2190,11 +2509,11 @@ else
 	}
 	
 	public static void OpenView(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		ClientLocators.Open().click();
@@ -2215,11 +2534,11 @@ else
 	}
 	
 	public static void exportOpen (  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'300.319837')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[30]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		ClientLocators.Open().click();
@@ -2238,20 +2557,20 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void ClosedStatus( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 		
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		String string_Categories =ClientLocators.Closed().getText();		//Storing old value of Statutory overdue.
@@ -2274,12 +2593,12 @@ else
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Closed count in the grid = "+CatcountGrid+" | Dashboard Closed Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Closed count in the grid = "+CatcountGrid+" | Dashboard Closed Count = "+CategoriesCountDas);
 		}
@@ -2288,11 +2607,11 @@ else
 	}
 	
 	public static void ClosedView(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		ClientLocators.Closed().click();
@@ -2313,11 +2632,11 @@ else
 	}
 	
 	public static void exportClosed (  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		ClientLocators.Closed().click();
@@ -2336,20 +2655,20 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void exportNoticeStatus (  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("//*[name()='text' and contains(@x,'46.2747584')]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[31]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		ClientLocators.Closed().click();
@@ -2365,20 +2684,20 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void RegistrationStatusBar( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
-		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
+		WebElement element = getDriver().findElement(By.xpath("(//*[name()='g'])[61]"));
 		js.executeScript("arguments[0].scrollIntoView(true);", element);
 		Thread.sleep(4000);
 		
@@ -2398,12 +2717,12 @@ else
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Active in the grid = "+CatcountGrid+" | Dashboard Active  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Active in the grid = "+CatcountGrid+" | Dashboard Active Count = "+CategoriesCountDas);
 		}
@@ -2413,7 +2732,7 @@ else
 	
 	
 	public static void RegistrationStatusExportBar( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
@@ -2443,14 +2762,14 @@ File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 if(dirContents.length < allFilesNew.length)
-{
+{Thread.sleep(5000);
 	
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
     for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-    {
+    {Thread.sleep(5000);
        if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-       {
+       {Thread.sleep(5000);
            lastModifiedFile = allFilesNew[i];
        }
     }
@@ -2471,10 +2790,10 @@ if(dirContents.length < allFilesNew.length)
 	int actualRow=0;
 	
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -2484,18 +2803,18 @@ if(dirContents.length < allFilesNew.length)
 	fis.close();
 	
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 }
 else
-{
+{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 }
 	
@@ -2503,7 +2822,7 @@ else
 
 	
 	public static void RegistrationSViewL( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
@@ -2526,7 +2845,7 @@ else
 	}
 	
 	public static void DownloadActiveBar(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
@@ -2547,16 +2866,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void RegistrationSHistoryBar( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
@@ -2571,9 +2890,9 @@ else
 		Thread.sleep(5000);
 		String item = ClientLocators.RegistrationLicencesHistory().getText();
 		Thread.sleep(4000);
-		if(item.equalsIgnoreCase("Registration & Licences History")) {
+		if(item.equalsIgnoreCase("Registration & Licences History")) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Clicking on History button page redirect to the Registration & Licences History page");
-		}else {
+		}else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " History button not working ");
 
 		}
@@ -2582,7 +2901,7 @@ else
 	
 	
 	public static void RegistrationSHistoryExportBar(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		WebElement element = getDriver().findElement(By.xpath("(//*[name()='text'][@id='chart-container-registration-status_Series_0_Point_0_Text_0'])[1]"));
@@ -2605,16 +2924,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  " File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  " File does not downloaded.");
 		}
 		
 	}
 	
 	public static void CalendarExport( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
 		JavascriptExecutor js = (JavascriptExecutor) getDriver();
 		WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
@@ -2661,14 +2980,14 @@ File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 
 if(dirContents.length < allFilesNew.length)
-{
+{Thread.sleep(5000);
 	
 	test.log(LogStatus.PASS, "File downloaded successfully.");
 	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
     for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
-    {
+    {Thread.sleep(5000);
        if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
-       {
+       {Thread.sleep(5000);
            lastModifiedFile = allFilesNew[i];
        }
     }
@@ -2689,10 +3008,10 @@ if(dirContents.length < allFilesNew.length)
 	int actualRow=0;
 	
 	for(Row row : sheet)
-	{
+	{Thread.sleep(5000);
 		
 		Cell cell =row.getCell(columnNumber);
-		if(cell != null) {
+		if(cell != null) {Thread.sleep(5000);
 			
 			rowCount++;
 			actualRow = rowCount-1;
@@ -2702,25 +3021,25 @@ if(dirContents.length < allFilesNew.length)
 	fis.close();
 	
 	if(count1 == actualRow)
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.PASS, "Total records from Calendar Grid = "+count1+" | Total records from Report = "+actualRow);
 	}
 	else
-	{
+	{Thread.sleep(5000);
 		
 		test.log(LogStatus.FAIL, "Total records from  CalendarGrid = "+count1+" | Total records from Excel Sheet = "+actualRow);
 	}
 }
 else
-{
+{Thread.sleep(5000);
 	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
 }
 	
 	}
 
     public static void CalendarCount( ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
     	JavascriptExecutor js = (JavascriptExecutor) getDriver();
     	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
@@ -2751,12 +3070,12 @@ else
 		int CatcountGrid = Integer.parseInt(compliancesCount);
 		
 		if(CategoriesCountDas == CatcountGrid)
-		{
+		{Thread.sleep(5000);
 			
 			test.log(LogStatus.PASS, "No of Calendar Grid = "+CatcountGrid+" | Dashboard Calendar  Count = "+CategoriesCountDas);
 		}
 		else
-		{
+		{Thread.sleep(5000);
 		
 			test.log(LogStatus.FAIL, "No of Calendar Grid= "+CatcountGrid+" | Dashboard Calendar Count = "+CategoriesCountDas);
 		}
@@ -2767,7 +3086,7 @@ else
 	
 	
     public static void CalendarOverview( ExtentTest test) throws InterruptedException, IOException
-  	{
+  	{Thread.sleep(5000);
   	
       	JavascriptExecutor js = (JavascriptExecutor) getDriver();
       	WebElement element = getDriver().findElement(By.xpath("//img[@src='../assets/vectors/ExportButton.svg']"));
@@ -2792,7 +3111,7 @@ else
   	}
     
     public static void DailyUpdates( ExtentTest test) throws InterruptedException, IOException
-  	{
+  	{Thread.sleep(5000);
   	
       	JavascriptExecutor js = (JavascriptExecutor) getDriver();
       	WebElement element = getDriver().findElement(By.xpath("//div[@class='updates']//div[1]//a[1]"));
@@ -2809,7 +3128,7 @@ else
   	}
 
     public static void SwitchtoChild( ExtentTest test) throws InterruptedException, IOException
-	{		
+	{Thread.sleep(5000);		
 		Thread.sleep(3000);
 		
 		Set w = getDriver().getWindowHandles();    // window handles
@@ -2827,7 +3146,7 @@ else
 	}
     
     public static void SwitchtoParent( ExtentTest test) throws InterruptedException, IOException
-	{		
+	{Thread.sleep(5000);		
 		Thread.sleep(3000);
 		
 		Set w = getDriver().getWindowHandles();    // window handles
@@ -2843,7 +3162,7 @@ else
     
     
     public static void InputUpload ( ExtentTest test) throws InterruptedException, IOException, AWTException
-	{		
+	{Thread.sleep(5000);		
 		Actions action = new Actions(getDriver());
 		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
 		Thread.sleep(3000);
@@ -2898,10 +3217,10 @@ else
 				
 					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
 					
-					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+					if(text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
 						test.log(LogStatus.PASS,"Message Displayed : "+text1);
 				
-					}else {
+					}else {Thread.sleep(5000);
 						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
 					}
 						Locators.ok().click();
@@ -2909,7 +3228,7 @@ else
 	}
 	
     public static void InputUploadTem ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -2937,9 +3256,9 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
 		}
    		  	
@@ -2947,7 +3266,7 @@ else
    	
        
     public static void InputUploadInavlid ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3002,10 +3321,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3013,7 +3332,7 @@ else
   	}
   	
     public static void InputUploadBlank ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3068,10 +3387,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3079,7 +3398,7 @@ else
   	}
   	
     public static void InputUploadInvalidformate ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3133,10 +3452,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3145,7 +3464,7 @@ else
   	
     
     public static void InputUploadInvalidTemp ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		ClientLocators.SelectEntity().click();
@@ -3199,10 +3518,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3210,7 +3529,7 @@ else
   	}
   	
     public static void InputUploadNofile ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3234,10 +3553,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3245,7 +3564,7 @@ else
   	}
   	
     public static void IUHistory(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
     	Thread.sleep(3000);
     	/*	ClientLocators.SelectEntity().click();
@@ -3263,13 +3582,13 @@ else
   	 
   		Thread.sleep(3000);
 		
-		 if(ClientLocators.HistoryIU().isEnabled()) {
+		 if(ClientLocators.HistoryIU().isEnabled()) {Thread.sleep(5000);
 			 
 				test.log(LogStatus.PASS,  " History button working successfully."); 
 				ClientLocators.HistoryIU().click();
 		 }
 		 else
-		 {
+		 {Thread.sleep(5000);
 		 	test.log(LogStatus.FAIL, "History button does not working properly.");
 		 }
 		  	 Thread.sleep(3000);
@@ -3278,7 +3597,7 @@ else
 	}
     
     public static void IUHistoryD(  ExtentTest test) throws InterruptedException, IOException
-	{
+	{Thread.sleep(5000);
 	
     	Thread.sleep(3000);
     	/*	ClientLocators.SelectEntity().click();
@@ -3307,9 +3626,9 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
 		}
 		 
@@ -3318,7 +3637,7 @@ else
     
     
     public static void InputUploadTemSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -3347,16 +3666,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
 		}
    		  	
    	}
     
     public static void InputUploadSA ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -3412,10 +3731,10 @@ else
    				
    					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
    					
-   					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+   					if(text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
    						test.log(LogStatus.PASS,"Message Displayed : "+text1);
    				
-   					}else {
+   					}else {Thread.sleep(5000);
    						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
    					}
    						Locators.ok().click();
@@ -3423,7 +3742,7 @@ else
    	}
    	
     public static void InputUploadInavlidSA ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3478,10 +3797,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3489,7 +3808,7 @@ else
   	}
     
     public static void InputUploadBlankSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3544,10 +3863,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3555,7 +3874,7 @@ else
   	}
     
     public static void InputUploadInvalidformateSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3610,10 +3929,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3621,7 +3940,7 @@ else
   	}
     
     public static void InputUploadInvalidTempSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3676,10 +3995,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3687,7 +4006,7 @@ else
   	}
     
     public static void InputUploadNofileSa ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3711,10 +4030,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3722,7 +4041,7 @@ else
   	}
     
     public static void IUHistorySa(  ExtentTest test) throws InterruptedException, IOException
- 	{
+ 	{Thread.sleep(5000);
  	
      	Thread.sleep(3000);
      	/*	ClientLocators.SelectEntity().click();
@@ -3739,13 +4058,13 @@ else
    	 
    		Thread.sleep(3000);
  		
- 		 if(ClientLocators.HistoryIU1().isEnabled()) {
+ 		 if(ClientLocators.HistoryIU1().isEnabled()) {Thread.sleep(5000);
  			 
  				test.log(LogStatus.PASS,  " History button working successfully."); 
  				ClientLocators.HistoryIU1().click();
  		 }
  		 else
- 		 {
+ 		 {Thread.sleep(5000);
  		 	test.log(LogStatus.FAIL, "History button does not working properly.");
  		 }
  		  	 Thread.sleep(3000);
@@ -3754,7 +4073,7 @@ else
  	}
     
     public static void IUHistoryDSA(  ExtentTest test) throws InterruptedException, IOException
-  	{
+  	{Thread.sleep(5000);
   	
       	Thread.sleep(3000);
       	/*	ClientLocators.SelectEntity().click();
@@ -3783,9 +4102,9 @@ else
   		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
   		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
   		Thread.sleep(3000);
-  		if (dirContents.length < allFilesNew.length) {
+  		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
   			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
-  		} else {
+  		} else {Thread.sleep(5000);
   			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
   		}
   		 
@@ -3793,7 +4112,7 @@ else
   	}
   	
     public static void InputUploadTemChha ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -3829,9 +4148,9 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
 		}
    		  	
@@ -3839,7 +4158,7 @@ else
     
     
     public static void InputUploadCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -3901,17 +4220,17 @@ else
    				
    					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
    					
-   					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+   					if(text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
    						test.log(LogStatus.PASS,"Message Displayed : "+text1);
    				
-   					}else {
+   					}else {Thread.sleep(5000);
    						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
    					}
    						Locators.ok().click();
    	}
 
     public static void InputUploadInavlidCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -3972,10 +4291,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -3984,7 +4303,7 @@ else
     
     
     public static void InputUploadBlankCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4045,10 +4364,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4056,7 +4375,7 @@ else
   	}
     
     public static void InputUploadInvalidformateCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4118,10 +4437,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4129,7 +4448,7 @@ else
   	}
     
     public static void InputUploadInvalidTempCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4191,10 +4510,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4203,7 +4522,7 @@ else
     
     
     public static void InputUploadNofileCh ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   	/*	ClientLocators.SelectEntity().click();
@@ -4232,10 +4551,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4243,7 +4562,7 @@ else
   	}
     
     public static void IUHistoryCh(  ExtentTest test) throws InterruptedException, IOException
- 	{
+ 	{Thread.sleep(5000);
  	
      	Thread.sleep(3000);
      	/*	ClientLocators.SelectEntity().click();
@@ -4267,13 +4586,13 @@ else
    		ClientLocators.Apply().click();
    		Thread.sleep(4000);
  		
- 		 if(ClientLocators.HistoryIU().isEnabled()) {
+ 		 if(ClientLocators.HistoryIU().isEnabled()) {Thread.sleep(5000);
  			 
  				test.log(LogStatus.PASS,  " History button working successfully."); 
  				ClientLocators.HistoryIU().click();
  		 }
  		 else
- 		 {
+ 		 {Thread.sleep(5000);
  		 	test.log(LogStatus.FAIL, "History button does not working properly.");
  		 }
  		  	 Thread.sleep(3000);
@@ -4282,7 +4601,7 @@ else
  	}
     
     public static void IUHistoryDCh(  ExtentTest test) throws InterruptedException, IOException
-  	{
+  	{Thread.sleep(5000);
   	
       	Thread.sleep(3000);
       	/*	ClientLocators.SelectEntity().click();
@@ -4317,9 +4636,9 @@ else
   		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
   		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
   		Thread.sleep(3000);
-  		if (dirContents.length < allFilesNew.length) {
+  		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
   			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
-  		} else {
+  		} else {Thread.sleep(5000);
   			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
   		}
   		 
@@ -4327,7 +4646,7 @@ else
   	}
     
     public static void InputUploadTemRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -4363,16 +4682,16 @@ else
 		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
 		Thread.sleep(3000);
-		if (dirContents.length < allFilesNew.length) {
+		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
 			test.log(LogStatus.PASS,  "Template File downloaded successfully.");
-		} else {
+		} else {Thread.sleep(5000);
 			test.log(LogStatus.FAIL,  "Template File does not downloaded.");
 		}
    		  	
    	}
     
     public static void InputUploadRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
-   	{		
+   	{Thread.sleep(5000);		
    		Actions action = new Actions(getDriver());
    		WebDriverWait wait = new WebDriverWait( getDriver(), (40));
    		Thread.sleep(3000);
@@ -4434,17 +4753,17 @@ else
    				
    					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
    					
-   					if(text1.equalsIgnoreCase("File uploaded successfully")) {
+   					if(text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
    						test.log(LogStatus.PASS,"Message Displayed : "+text1);
    				
-   					}else {
+   					}else {Thread.sleep(5000);
    						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
    					}
    						Locators.ok().click();
    	}
     
     public static void InputUploadInavlidRe( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4505,10 +4824,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4516,7 +4835,7 @@ else
   	}
     
     public static void InputUploadBlankRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4576,10 +4895,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4587,7 +4906,7 @@ else
   	}
     
     public static void InputUploadInvalidformateRe ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4649,10 +4968,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4660,7 +4979,7 @@ else
   	}
     
     public static void InputUploadInvalidTempRe( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4722,10 +5041,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4733,7 +5052,7 @@ else
   	}
     
     public static void InputUploadNofilere ( ExtentTest test) throws InterruptedException, IOException, AWTException
-  	{		
+  	{Thread.sleep(5000);		
   		
   		Thread.sleep(3000);
   		/*	ClientLocators.SelectEntity().click();
@@ -4763,10 +5082,10 @@ else
   				
   					String text1 = getDriver().findElement(By.xpath("//h4[@class='f-label']")).getText();
   					
-  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {
+  					if(!text1.equalsIgnoreCase("File uploaded successfully")) {Thread.sleep(5000);
   						test.log(LogStatus.PASS,"Message Displayed : "+text1);
   				
-  					}else {
+  					}else {Thread.sleep(5000);
   						test.log(LogStatus.FAIL,"Message Displayed : "+text1);
   					}
   						Locators.ok().click();
@@ -4775,7 +5094,7 @@ else
     
     
     public static void IUHistoryRe(  ExtentTest test) throws InterruptedException, IOException
- 	{
+ 	{Thread.sleep(5000);
  	
      	Thread.sleep(3000);
      	/*	ClientLocators.SelectEntity().click();
@@ -4799,13 +5118,13 @@ else
    		ClientLocators.Apply().click();
    		Thread.sleep(4000);
  		
- 		 if(ClientLocators.HistoryIU().isEnabled()) {
+ 		 if(ClientLocators.HistoryIU().isEnabled()) {Thread.sleep(5000);
  			 
  				test.log(LogStatus.PASS,  " History button working successfully."); 
  				ClientLocators.HistoryIU().click();
  		 }
  		 else
- 		 {
+ 		 {Thread.sleep(5000);
  		 	test.log(LogStatus.FAIL, "History button does not working properly.");
  		 }
  		  	 Thread.sleep(3000);
@@ -4814,7 +5133,7 @@ else
  	}
     
     public static void IUHistoryDRe(  ExtentTest test) throws InterruptedException, IOException
-  	{
+  	{Thread.sleep(5000);
   	
       	Thread.sleep(3000);
       	/*	ClientLocators.SelectEntity().click();
@@ -4849,9 +5168,9 @@ else
   		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
   		File[] allFilesNew = dir1.listFiles(); // Counting number of files in directory after download
   		Thread.sleep(3000);
-  		if (dirContents.length < allFilesNew.length) {
+  		if (dirContents.length < allFilesNew.length) {Thread.sleep(5000);
   			test.log(LogStatus.PASS,  "Input History File downloaded successfully.");
-  		} else {
+  		} else {Thread.sleep(5000);
   			test.log(LogStatus.FAIL,  "Input History File does not downloaded.");
   		}
   		 
@@ -4860,7 +5179,7 @@ else
     
     /*
     public static void CriticalDocuments(  ExtentTest test) throws InterruptedException
-	{
+	{Thread.sleep(5000);
 		Thread.sleep(1000);
 		ClientLocators.clickMyDocuments().click();					//Clicking on 'My Documents'
 		
@@ -4894,11 +5213,11 @@ else
 	//	String msg = driver.switchTo().alert().getText();
 		//test.log(LogStatus.INFO, msg);
 		Thread.sleep(500);
-		try {
+		try {Thread.sleep(5000);
 			String t = OverduePOM.readFolderMsg().getText();
 			test.log(LogStatus.PASS, t);
 			//getDriver().switchTo().alert().accept();
-		}catch(Exception e) {
+		}catch(Exception e) {Thread.sleep(5000);
 			
 		}
 		Thread.sleep(3000);
@@ -4906,11 +5225,11 @@ else
 		name = readFolderName().getText();				//Reading the folder name we had created
 		
 		if(folder.equalsIgnoreCase(name))
-		{
+		{Thread.sleep(5000);
 			test.log(LogStatus.PASS, "Created folder '"+folder+"' displayed in the records.");
 		}
 		else
-		{
+		{Thread.sleep(5000);
 			test.log(LogStatus.FAIL, "Created folder '"+folder+"' doesn't displayed in the records.");
 		}
 		

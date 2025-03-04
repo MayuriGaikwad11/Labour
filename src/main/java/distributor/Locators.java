@@ -1228,6 +1228,12 @@ public class Locators extends BasePage {
 		return user;
 	}
 	
+	public static WebElement  Gridcount1  ( )		
+	{
+		user = getDriver().findElement(By.xpath("/html/body/app-root/div/app-layout/section/div/div/app-statutory-master/kendo-grid/kendo-pager/kendo-pager-info"));
+		return user;
+	}
+	
 	public static WebElement  LeaveType  ( )		
 	{
 		user = getDriver().findElement(By.xpath("//a[normalize-space()='Leave Type']"));
@@ -1240,11 +1246,69 @@ public class Locators extends BasePage {
 		return user;
 	}
 	
+	public static WebElement  Search1( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='k-svg-i-caret-alt-down k-button-icon k-svg-icon k-icon'])[2]"));
+		return user;
+	}
+	
 	public static WebElement  SearchLT  ( )		
 	{
 		user = getDriver().findElement(By.xpath("(//*[@class='k-list-ul']/li)[2]"));
 		return user;
 	}
+	
+	public static WebElement  StatutoryMaster( )		
+	{
+		user = getDriver().findElement(By.xpath("//a[normalize-space()='Statutory Master']"));
+		return user;
+	}
+	
+	public static WebElement  ComplianceType( )		
+	{
+		user = getDriver().findElement(By.xpath("//span[@class='k-input-value-text']"));
+		return user;
+	}
+	
+	public static WebElement  ComplianceType1  ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='k-list-ul']/li)[2]"));
+		return user;
+	}
+	
+	public static WebElement  ComplianceType2  ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='k-list-ul']/li)[3]"));
+		return user;
+	}
+	
+	public static WebElement  ComplianceType3  ( )		
+	{
+		user = getDriver().findElement(By.xpath("(//*[@class='k-list-ul']/li)[4]"));
+		return user;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
